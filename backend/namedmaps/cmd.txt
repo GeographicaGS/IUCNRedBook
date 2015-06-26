@@ -1,0 +1,55 @@
+// Get templates
+curl -X GET 'https://alasarr.cartodb.com/api/v1/map/named?api_key=APIKEY'
+
+// Create transactions_station
+curl -X POST \
+   -H 'Content-Type: application/json' \
+   -d @transactions_station.json \
+   'https://alasarr.cartodb.com/api/v1/map/named?api_key=APIKEY'
+
+// Instantiate transactions_station
+curl -X POST \
+  -H 'Content-Type: application/json' \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_station?api_key=APIKEY'
+
+// Update transactions_station
+curl -X PUT \
+  -H 'Content-Type: application/json' \
+  -d @transactions_station.json \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_station?api_key=APIKEY'
+
+
+// Create transactions_prov
+curl -X POST \
+   -H 'Content-Type: application/json' \
+   -d @transactions_prov.json \
+   'https://alasarr.cartodb.com/api/v1/map/named?api_key=APIKEY'
+
+// Instantiate transactions_prov
+curl -X POST \
+  -H 'Content-Type: application/json' \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_prov?api_key=APIKEY'
+
+// Update transactions_prov
+curl -X PUT \
+  -H 'Content-Type: application/json' \
+  -d @transactions_prov.json \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_prov?api_key=APIKEY'
+
+
+// Create transactions_region
+curl -X POST \
+   -H 'Content-Type: application/json' \
+   -d @transactions_region.json \
+   'https://alasarr.cartodb.com/api/v1/map/named?api_key=APIKEY'
+
+// Instantiate transactions_region
+curl -X POST \
+  -H 'Content-Type: application/json' \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_region?api_key=APIKEY'
+
+// Update transactions_region
+curl -X PUT \
+  -H 'Content-Type: application/json' \
+  -d @transactions_region.json \
+  'https://alasarr.cartodb.com/api/v1/map/named/transactions_region?api_key=APIKEY'

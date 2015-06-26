@@ -1,0 +1,170 @@
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+
+.txt-stroke(@color){
+   text-shadow:
+   -1px -1px 0 @color,
+    1px -1px 0 @color,
+    -1px 1px 0 @color,
+     1px 1px 0 @color;
+}
+.common-box-shadow{
+  box-shadow: 0 3px 5px -2px rgba(0,0,0,.5);
+  }
+
+.common-btn {
+	.text-hide();
+	background-color: @cp-off-white;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	&:hover {
+		background-color : darken(@cp-off-white, 5%);
+	}
+}
+
+.thick-border{
+  border: 4px solid fade(#939597, 50%);
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Sizing shortcuts
+
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
+
+// .shadow-t {
+//   0 -10px 10px -10px orange;
+// }
+
+.shadow-top(@size, @color) {
+  box-shadow: 0 -@size @size -@size @color;
+}
+.shadow-btm(@size, @color) {
+  box-shadow: 0 @size @size -@size @color;
+}
+.shadow-rgt(@size, @color) {
+  box-shadow: @size 0 @size -@size @color;
+}
+.shadow-lft(@size, @color) {
+  box-shadow: -@size 0 @size -@size @color;
+}
+
+// .shadow-r {
+//   box-shadow: 10px 0 10px -10px green;
+// }
+// .shadow-b {
+//   0 10px 10px -10px red;
+// }
+// .shadow-l {
+//   box-shadow:-10px 0 10px -10px blue;
+// }
+
+
+
+//Bootstrap useful
+
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+// Opacity
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+// Single side border-radius
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+// CSS image replacement
+//
+// Heads up! v3 launched with only `.hide-text()`, but per our pattern for
+// mixins being reused as classes with the same name, this doesn't hold up. As
+// of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`.
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+
+// Deprecated as of v3.0.1 (will be removed in v4)
+.hide-text() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// New mixin to use as of v3.0.1
+.text-hide() {
+  .hide-text();
+}

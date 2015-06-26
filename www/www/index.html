@@ -1,0 +1,14 @@
+<html>
+<body>
+<script type="text/javascript">
+    var language = window.navigator.userLanguage || window.navigator.language;
+    if (["es","en"].indexOf(language) != -1){
+        window.location.replace(language);
+    }
+    else{
+        // other languages go to en
+        window.location.replace("/en");
+    }
+</script>
+</body>
+</html>
