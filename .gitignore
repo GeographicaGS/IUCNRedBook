@@ -25,3 +25,19 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+www/www/es/index.html
+www/www/en/index.html
+www/www/js/main.min.js
+www/www/js/main.min.map
+www/www/css/styles.min.css
+www/src/js/Config.js
+www/s3_website.yml
+
+*.sublime-*
+
+tags
+
+backend/sampledata/*.csv
+backend/sampledata/config.js
+backend/api/config.js

@@ -1,29 +1,33 @@
-// Colors
-@cp-red : #e60000;
-@cp-white: #fff;
-@cp-off-white: #eee;
-@cp-grey-ui-l: #ddd;
-@cp-grey-ui-m: #999;
-@cp-grey-ld:#ccc;
-@cp-grey-m: #555;
-@cp-grey-ml: #808080;
-@cp-grey-d: #272727;
-@cp-green-ui: #00cc00;
-@cp-orange-ui:#ff9900;
-@cp-blue-l: #3399cc;
-@geographica-green: #82b600;
+//debug
+*{
+	// outline: 1px dashed red;
+}
 
-//~"calc(100% - 96px)"
-@border-thick : ~"4px solid fade(#939597, 50%)";
+// Colors
+@white: #fff;
+@black:#000;
+@blue-link:#00a2d0;
+
+@light-grey: #e1dedd; //brand
+@dark-grey: #7b7168; //brand
+@dark-grey-l:#6b675d;//brand lower in intensity
+@dark-grey-variation: #7b7168; //slightly lighter
+
+@off-white:#f6f5f4; //title background
+@light-grey: #e1dedd; //barely visible on white
+@light-grey-ui:#d7d5d4; //all borders
+@light-g-ui: #cac7c6;
+
+@light-grey-m:#c0bdbc; // nav menu off
+@light-grey-d:#9f9f9f; // disabled layers
+@light-grey-db:#94908e;//slightly brown
+@dark-grey-lighter:#a39c96;
+@darker-grey:#3d3834; //(text)
 
 
 //Typography
-@import url(http://fonts.googleapis.com/css?family=Roboto:700,500,400,300);
-// @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
-
-@font-heading:  ~"'Roboto Condensed', sans-serif";
-@font-body: ~"'Roboto', sans-serif";
-
+// @font-heading:  ~"'Roboto Condensed', sans-serif";
+@font-body: ~"'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;";
 
 //Responsive
 //breakPoints
@@ -31,3 +35,5 @@
 @medium: ~"only screen and (min-width: 992px)";
 @large: ~"only screen and (min-width: 1200px)";
 @m500:  ~"only screen and (min-width: 500px)";
+
+//calc(~"100% - 15rem +" (10px+5px) ~"+ 2em");

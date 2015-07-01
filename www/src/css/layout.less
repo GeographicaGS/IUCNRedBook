@@ -1,0 +1,119 @@
+html, body, #main, #map {
+  height: 100%;
+}
+
+header,
+#legend-panel,
+#content,
+footer {
+    position: fixed;
+    display: block;
+}
+
+header {
+    .position(fixed, 0, 0, auto, 0);
+    width: 100%;
+    z-index: 10;
+}
+
+#legend-panel {
+    .position(fixed, 77px, auto, auto, 16px);
+    width: 355px;
+    // position:relative;
+    z-index: 1;
+    // max-height:~"calc(100% - 127px)";
+    height: 100%;
+    height: auto;
+}
+
+#addlayer-panel {
+    .position(fixed, 61px, auto, 0, 0);
+    width: 429px;
+    transform-origin: center center;
+    // height:0;
+    height: ~"calc(100% - 96px)";
+    opacity: 0;
+    transform: scaleY(0);
+    // transition: height,opacity, .3s;
+    &.open {
+        opacity: 1;
+        animation-name: scaleUp;
+        animation-duration: .2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#content {
+    .position(fixed, 61px, 0, 0, auto);
+    display: inline-block;
+    width: 50%;
+    transition: transform .2s ease-out;
+    height: calc(~"100% - (61px+35px)");
+    transform: ~"translateX(calc(100% - 10px))";
+    .content-standard {
+        position: absolute;
+        padding: 76px 10.953058321%; /* 77 (originally 77) / 703 */
+        height: calc(~"100% - 35px");
+        overflow: auto;
+    }
+    &.open  {
+    	width: 50%;
+    	transform: translateX(0);
+    }
+    .content {
+        height: 100%;
+    }
+    #pdf-viewer {
+        height: calc(~"100% - 35px");
+    }
+}//#content
+
+footer {
+    .position(fixed, auto, 0, 0, 0);
+    width: 100%;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: auto;
+	    min-width: 50%;
+	    min-height: 50%;
+	}
+}
+
+
+/* Animations */
+
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}

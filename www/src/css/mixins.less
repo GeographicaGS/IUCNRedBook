@@ -1,151 +1,251 @@
+/*--------------------------------
+lista roja specific common traits
+-------------------------------- */
+.title-ban {
+    background: @off-white;
+    border-top: 1px solid @light-g-ui;
+    color: @dark-grey-l;
+    .font-size(1.1);
+    // line-height: 32/11;
+    padding: 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+}
+
+.marker-color(@color) {
+    background-color: @color !important;
+    border-color:@color !important;
+}
+
+.ico-24 {
+    display: inline-block;
+    .square(24px);
+        background: url('/img/uicn_lr_ico_layer_sprite.svg') no-repeat 0 0 transparent;
+}
+
+.map-icon{
+    display: block;
+    .square(32px);
+    background: url('/img/uicn_lr_ico_panel_sprite.svg') no-repeat 0 0 transparent;
+
+    &.forestales {
+        background-position: 0 0;
+    }
+    &.climatica{
+         background-position: -32px 0;
+    }
+    &.tendencia{
+        background-position: -(32px * 2) 0;
+    }
+    &.historico {
+        background-position: -(32px * 3) 0;
+    }
+    &.protegidos{
+        background-position: -(32px * 4) 0;
+    }
+}
+
+.marker(@size) {
+    display: block;
+    .square(@size);
+    border-radius:50%;
+}
+
+/* ENDS -lista roja specific common traits */
+
+
+/*--------------------------------
+davide's common
+-------------------------------- */
+
+
+//set global font-size to 62.5% for this to work
 .font-size(@sizeValue) {
-  @remValue: @sizeValue;
-  @pxValue: (@sizeValue * 10);
-  font-size: ~"@{pxValue}px";
-  font-size: ~"@{remValue}rem";
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
 }
 
-.txt-stroke(@color){
-   text-shadow:
-   -1px -1px 0 @color,
-    1px -1px 0 @color,
-    -1px 1px 0 @color,
-     1px 1px 0 @color;
-}
-.common-box-shadow{
-  box-shadow: 0 3px 5px -2px rgba(0,0,0,.5);
-  }
-
-.common-btn {
-	.text-hide();
-	background-color: @cp-off-white;
-	background-position: center center;
-	background-repeat: no-repeat;
-	cursor:pointer;
-	&:hover {
-		background-color : darken(@cp-off-white, 5%);
-	}
+.txt-stroke(@color) {
+    text-shadow: -1px -1px 0 @color, 1px -1px 0 @color, -1px 1px 0 @color, 1px 1px 0 @color;
 }
 
-.thick-border{
-  border: 4px solid fade(#939597, 50%);
+//layout
+.position(@position, @top, @right, @bottom, @left) {
+  position: @position;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
 }
 
-// Clearfix
-//
-// For modern browsers
-// 1. The space content is one way to avoid an Opera bug when the
-//    contenteditable attribute is included anywhere else in the document.
-//    Otherwise it causes space to appear at the top and bottom of elements
-//    that are clearfixed.
-// 2. The use of `table` rather than `block` is only necessary if using
-//    `:before` to contain the top-margins of child elements.
-//
-// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+.link-state(@color) {
+    background: @color;
+    cursor:pointer;
+
+    &:hover {
+       background: darken(@color, 5%);
+       box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+    }
+    &:active {
+         background: darken(@color, 10%);
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1) inset;
+    }
+}//.link-state
+
+.link-state-l(@color) {
+    background: @color;
+    cursor: pointer;
+
+    &:hover {
+        background: lighten(@color, 5%);
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+    }
+    &:active {
+        background: darken(@color, 5%);
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1) inset;
+    }
+}//.link-state
+
+.fa-alike {
+     -moz-osx-font-smoothing: grayscale;
+    font-family: FontAwesome;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: inherit;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    transform: translate(0px, 0px);
+}
+
+// CSS triangles with border
+
+.tip-b(@color, @brd-color, @size, @brd-size, @brd-offset) {
+    position:relative;
+
+    &:before, &:after {
+        top: 100%;
+        left: 50%;
+        //right:15px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:after {
+        border-color: transparent;
+        border-top-color: @color;
+        border-width:  @size;
+        margin-left: -@size;
+    }
+    &:before {
+        border-color:transparent;
+        border-top-color: @brd-color;
+        border-width: @brd-size;
+        margin-right: -@brd-offset;
+    }
+}
+
+/* single side shadows */
+
+.shadow-top(@size, @color) {
+    box-shadow: 0 -@size @size -@size @color;
+}
+.shadow-btm(@size, @color) {
+    box-shadow: 0 @size @size -@size @color;
+}
+.shadow-rgt(@size, @color) {
+    box-shadow: @size 0 @size -@size @color;
+}
+.shadow-lft(@size, @color) {
+    box-shadow: -@size 0 @size -@size @color;
+}
+
+
+/*--------------------------------
+Mixins from Bootstrap
+-------------------------------- */
 
 .clearfix() {
-  &:before,
-  &:after {
-    content: " "; // 1
-    display: table; // 2
-  }
-  &:after {
-    clear: both;
-  }
+    &:before, &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 // Sizing shortcuts
 
 .size(@width; @height) {
-  width: @width;
-  height: @height;
+    width: @width;
+    height: @height;
 }
 
 .square(@size) {
-  .size(@size; @size);
+    .size(@size;@size);
 }
-
-// .shadow-t {
-//   0 -10px 10px -10px orange;
-// }
-
-.shadow-top(@size, @color) {
-  box-shadow: 0 -@size @size -@size @color;
-}
-.shadow-btm(@size, @color) {
-  box-shadow: 0 @size @size -@size @color;
-}
-.shadow-rgt(@size, @color) {
-  box-shadow: @size 0 @size -@size @color;
-}
-.shadow-lft(@size, @color) {
-  box-shadow: -@size 0 @size -@size @color;
-}
-
-// .shadow-r {
-//   box-shadow: 10px 0 10px -10px green;
-// }
-// .shadow-b {
-//   0 10px 10px -10px red;
-// }
-// .shadow-l {
-//   box-shadow:-10px 0 10px -10px blue;
-// }
-
-
-
-//Bootstrap useful
-
 
 .caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px dashed;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }
 
 // Opacity
 
 .opacity(@opacity) {
-  opacity: @opacity;
-  // IE8 filter
-  @opacity-ie: (@opacity * 100);
-  filter: ~"alpha(opacity=@{opacity-ie})";
+    opacity: @opacity;
+    // IE8 filter
+    @opacity-ie: (@opacity * 100);
+    filter: ~"alpha(opacity=@{opacity-ie})";
 }
 
 // Single side border-radius
-
 .border-top-radius(@radius) {
-  border-top-right-radius: @radius;
-   border-top-left-radius: @radius;
-}
-.border-right-radius(@radius) {
-  border-bottom-right-radius: @radius;
-     border-top-right-radius: @radius;
-}
-.border-bottom-radius(@radius) {
-  border-bottom-right-radius: @radius;
-   border-bottom-left-radius: @radius;
-}
-.border-left-radius(@radius) {
-  border-bottom-left-radius: @radius;
-     border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+    border-top-left-radius: @radius;
 }
 
+.border-right-radius(@radius) {
+    border-bottom-right-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius) {
+    border-bottom-right-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+.border-left-radius(@radius) {
+    border-bottom-left-radius: @radius;
+    border-top-left-radius: @radius;
+}
 
 // Text overflow
 // Requires inline-block or block for proper styling
-
 .text-overflow() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
 
 // CSS image replacement
 //
@@ -154,17 +254,16 @@
 // of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`.
 //
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-
 // Deprecated as of v3.0.1 (will be removed in v4)
 .hide-text() {
-  font: ~"0/0" a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
 }
 
 // New mixin to use as of v3.0.1
 .text-hide() {
-  .hide-text();
+    .hide-text();
 }

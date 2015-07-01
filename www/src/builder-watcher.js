@@ -1,4 +1,4 @@
-var watch = require('node-watch');
+var watch = require('./build/Sting/node_modules/node-watch');
 var exec = require('child_process').exec;
 
 var param = (process.argv.length == 3 && process.argv[2]=="debug") ? "debug" : "",

@@ -31,7 +31,7 @@ App.Router = Backbone.Router.extend({
     },
 
     initialize: function(opts) {
-        this._ctx = opts.ctx;
+        //this._ctx = opts.ctx;
         this._map = opts.map;
         // this._groupChart = opts.groupChart;
         // this._dataPanel = opts.dataPanel;
@@ -46,12 +46,12 @@ App.Router = Backbone.Router.extend({
 
         // Nothind to do with the context. Default values
 
-        this._ctx.update({
+        /*this._ctx.update({
             type : App.Cons.TYPE_DASHBOARD
-        },false);
+        },false);*/
 
         //this._map._userRegistrationsAnimated();
-        App.showView(new App.View.Dashboard({ctx:this._ctx}));
+        //App.showView(new App.View.Dashboard({ctx:this._ctx}));
     },
 
     request: function(type,agg,animation,date,filter){
@@ -77,7 +77,7 @@ App.Router = Backbone.Router.extend({
     // },
 
     notfound: function(){
-        //App.showView(new App.View.NotFound());
+        App.showView(new App.View.NotFound());
     },
 
     error: function(){

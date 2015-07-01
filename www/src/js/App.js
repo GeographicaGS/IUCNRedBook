@@ -91,19 +91,12 @@ App.detectCurrentLanguage = function(){
 App.ini = function(){
 
     this.lang = this.detectCurrentLanguage();
-
-
     moment.locale(this.lang);
 
+    this.currentLayers = new App.Collection.Categories();
+    this.catalog = new App.Collection.Categories(App.Catalog.categories);
 
-    var ctx = new Context(),
-        map = new App.View.Map({ctx: ctx});
-        // groupChart = new App.View.GroupChart({ctx: ctx}),
-        // dataPanel = new App.View.DataPanel({ctx: ctx, miniChart:groupChart.getMiniChart()}),
-        // sidebar = new App.View.Sidebar({ctx: ctx}),
-        // timebar = new App.View.Timebar({ctx: ctx});
-        // filterHeader = new App.View.FilterHeader({ctx: ctx});
-        // filter = new App.View.Filter({ctx: ctx});
+    var main = new App.View.Main();
 
     // Be careful UPDATING the context, that's generated work
     // var options = ctx.toJSON();
@@ -112,7 +105,7 @@ App.ini = function(){
     // ctx.update(options);
 
     this.router = new App.Router({
-        ctx: ctx,
+        //ctx: ctx,
         map : map,
         // groupChart : groupChart,
         // dataPanel : dataPanel,
