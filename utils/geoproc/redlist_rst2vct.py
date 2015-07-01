@@ -35,7 +35,7 @@ def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
 
     drv = ogr.GetDriverByName(frmt)
 
-    out_lyr_name = 'outlayer'
+    out_lyr_name = os.path.splitext(os.path.basename(indata))[0]
 
     if os.path.exists(outdata):
         drv.DeleteDataSource(outdata)
@@ -61,34 +61,49 @@ def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
     out_ds = None
 
 
-def filterShpByValue(indata, flt_field, flt_value, frmt="ESRI Shapefile"):
+def filterShpByValue(indata, flt_outdata, flt_field, flt_value, frmt="ESRI Shapefile"):
     # Get the input Layer
     in_drv = ogr.GetDriverByName(frmt)
     in_ds = in_drv.Open(indata, 0)
     in_lyr = in_ds.GetLayer()
     in_lyr.SetAttributeFilter("{0} != {1}".format(flt_field, flt_value))
 
-    outdata = os.path.join(os.path.split(indata)[0], "filtered_layer.shp")
     out_drv = ogr.GetDriverByName(frmt)
 
-    if os.path.exists(outdata):
-        out_drv.DeleteDataSource(outdata)
+    if os.path.exists(flt_outdata):
+        out_drv.DeleteDataSource(flt_outdata)
 
-    out_ds = out_drv.CreateDataSource(outdata)
-    out_lyr_name = os.path.splitext(os.path.split(outdata)[1])[0]
+    out_ds = out_drv.CreateDataSource(flt_outdata)
+    out_lyr_name = os.path.splitext(os.path.split(flt_outdata)[1])[0]
 
     out_lyr = out_ds.CopyLayer(in_lyr,'filtered_layer')
 
     in_ds = None
     out_ds = None
 
-if __name__ == "__main__":
 
-    indata = "/home/cayetano/Escritorio/proyectos/iucn_listaroja/comunicaciones/recibidos/20150513/USB_marcosvalderrabano/Mapas EEZA/regionalizaciones/mo_reg03.tif"
-    outdata = "/tmp/pruebas/new_shape.shp"
-
-    rst2vct(indata, outdata)
-
+def main():
+    infolder = "/home/cayetano/Escritorio/proyectos/iucn_listaroja/comunicaciones/recibidos/20150513/USB_marcosvalderrabano/Mapas EEZA"
+    outfolder = "/tmp/pruebas"
+    fl_fltr = ".tif"
     flt_value = 0
     flt_field = "values"
-    filterShpByValue(outdata, flt_field, flt_value)
+
+    for subdir, dirs, files in os.walk(infolder):
+        for fl in files:
+            if os.path.splitext(fl)[1] == fl_fltr:
+                indata = os.path.join(subdir, fl)
+                outdata = os.path.join(outfolder, os.path.splitext(fl)[0] + ".shp")
+                flt_outdata = os.path.join(outfolder, os.path.splitext(os.path.split(outdata)[1])[0] + "_flt.shp")
+
+                print "Inputa data to process: {}".format(indata)
+
+                rst2vct(indata, outdata)
+                print "Output data processed: {}".format(outdata)
+
+                filterShpByValue(outdata, flt_outdata, flt_field, flt_value)
+                print "Output data processed (FILTERED): {}\n".format(flt_outdata)
+
+
+if __name__ == "__main__":
+    main()
