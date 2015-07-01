@@ -24,6 +24,8 @@ CREATE DATABASE redlist
 CREATE SCHEMA layers;
 ALTER SCHEMA layers OWNER TO redlist_admin;
 
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
 -- Enable PostGIS (includes raster)
 CREATE EXTENSION postgis;
 -- Enable Topology
