@@ -83,7 +83,7 @@ def filterShpByValue(indata, flt_outdata, flt_field, flt_value, frmt="ESRI Shape
 
 
 def main():
-    infolder = "/home/cayetano/Escritorio/proyectos/iucn_listaroja/comunicaciones/recibidos/20150513/USB_marcosvalderrabano/Mapas EEZA"
+    infolder = "/myfolder"
     outfolder = "/tmp/pruebas"
     fl_fltr = ".tif"
     flt_value = 0
