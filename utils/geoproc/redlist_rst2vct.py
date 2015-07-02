@@ -83,7 +83,7 @@ def filterShpByValue(indata, flt_outdata, flt_field, flt_value, frmt="ESRI Shape
 
 
 def main():
-    infolder = "/myfolder"
+    infolder = "/home/cayetano/Escritorio/proyectos/iucn_listaroja/operaciones/data/USB_marcosvalderrabano/Mapas EEZA/2dRue/georref"
     outfolder = "/tmp/pruebas"
     fl_fltr = ".tif"
     flt_value = 0
@@ -106,4 +106,7 @@ def main():
 
 
 if __name__ == "__main__":
+
+    gdal.UseExceptions()
+
     main()
