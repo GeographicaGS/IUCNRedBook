@@ -30,8 +30,8 @@ def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
     in_ds = gdal.Open(indata)
 
     if in_ds is None:
-	    print "Unable to open {}".format(indata)
-	    sys.exit(1)
+        print "Unable to open {}".format(indata)
+        sys.exit(1)
 
     drv = ogr.GetDriverByName(frmt)
 
@@ -83,7 +83,7 @@ def filterShpByValue(indata, flt_outdata, flt_field, flt_value, frmt="ESRI Shape
 
 
 def main():
-    infolder = "/home/cayetano/Escritorio/proyectos/iucn_listaroja/operaciones/data/USB_marcosvalderrabano/Mapas EEZA/2dRue/georref"
+    infolder = "/myfolder"
     outfolder = "/tmp/pruebas"
     fl_fltr = ".tif"
     flt_value = 0

@@ -1,5 +1,5 @@
 ## Utils
 
 Scripts and utilities:
-- SQL (PgSQL/PostGIS).
-- etc.
+- SQL (PostGIS).
+- Python geoprocessing scripts.
