@@ -19,5 +19,6 @@
 	"IUCN, International Union for Conservation of Nature": "UICN, Unión Internacional para la Conservación de la Naturaleza",
 	"Aceptar": "Aceptar",
 	"Cancelar": "Cancelar",
-	"Hecho": "Hecho"
+	"Hecho": "Hecho",
+	"{{ title }}": "{{ title }}"
 }

@@ -30,7 +30,6 @@ App.events.on('context:change',function(ctxData){
 
 
 $(function() {
-
     $(document).ajaxError(function(event, jqxhr) {
         if (jqxhr.status == 404) {
             App.router.navigate('notfound',{trigger: true});
@@ -81,8 +80,8 @@ App.detectCurrentLanguage = function(){
     if (document.URL.indexOf('/es/') != -1 || document.URL.endsWith('/es')) {
         return 'es';
     }
-    else if (document.URL.indexOf('/en/') != -1 || document.URL.endsWith('/en')) {
-        return 'en';
+    else if (document.URL.indexOf('/fr/') != -1 || document.URL.endsWith('/fr')) {
+        return 'fr';
     }
 
     return 'es';
@@ -93,8 +92,16 @@ App.ini = function(){
     this.lang = this.detectCurrentLanguage();
     moment.locale(this.lang);
 
-    this.currentLayers = new App.Collection.Categories();
-    this.catalog = new App.Collection.Categories(App.Catalog.categories);
+    this.currentLayers = new App.Collection.Layers();
+
+    for (var index in this.Catalog.categories){
+        this.Catalog.categories[index]['title'] = this.Catalog.categories[index]['title_'+this.lang];
+    }
+    this.catalog = new App.Collection.Categories(this.Catalog.categories);
+    this.BaseCatalog = JSON.parse(JSON.stringify(this.Catalog));
+    this.baseCatalog = new App.Collection.Categories(this.BaseCatalog.categories);
+    this.baseCatalog.clearAllLayers();
+
 
     var main = new App.View.Main();
 

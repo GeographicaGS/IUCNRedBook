@@ -1,0 +1,20 @@
+<li class="layerItem {{#visible}}on{{/visible}}">
+    <!-- <input id="layer{{id}}" data-layerid="{{id}}" type="checkbox"> -->
+    <span class="marker" {{#color}}style="background-color: {{color}}; border-color: {{color}}"{{/color}}></span>
+    <label id="maplayer{{id}}">
+        {{name}}
+        {{#scientificname}}<em>({{scientificname}})</em>{{/scientificname}}
+    </label>
+    <span class='layer-clear'></span>
+    <span class='layer-opacity'>
+        <span class='ico-opacity'></span>
+        <div class='o-make-visible'>
+            <div class='o-slider-wrapper'>
+                <div class='o-slider-bar'>
+                    <div class='o-slider-handle'></div>
+                </div>
+                <div class='o-slider-tip'></div>
+            </div>
+        </div>
+    </span>
+</li>

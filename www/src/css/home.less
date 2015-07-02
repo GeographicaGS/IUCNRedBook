@@ -319,12 +319,29 @@ header {
 				.font-size(1.3);
 				line-height: 27/13;
 				color:#999;
-				.label {
+				label {
 					// cursor:pointer;
+					max-width: calc(~'100% - 88px'); // 2 buttons * 44px
+					height: 16px;
+					line-height: 1em;
+					vertical-align: middle;
+					display: inline-block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+
+					em {
+						width: 100%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
 				}
 				.marker {
-					.marker(9px);
+					.marker(12px);
 					display: inline-block;
+					position: relative;
+					top: 1px;
 					margin: 0 7px;
 					cursor:pointer;
 					// float:left;
@@ -334,19 +351,22 @@ header {
 						background: fade(@blue-link, 10%);
 						border: 1px solid @blue-link;
 					}//hover
-
 				}//marker
 
 				&:hover {
 					background: fade(@blue-link, 5%);
+
 					.marker {
 						background: fade(@blue-link, 10%);
 						border: 1px solid @blue-link;
 					}
+
+					.layer-clear {
+						display: inline-block;
+					}
 				}
 
 				&.on {
-
 					.marker {
 						background: @blue-link;
 						border:1px solid  @blue-link;
@@ -357,20 +377,21 @@ header {
 						}//hover
 					}//marker
 
-
 					.label {
 						color:@darker-grey;
 					}
 					&:hover{
-
-						.layer-opacity, .layer-clear {
+						.layer-opacity {
 							display: inline-block;
 						}
 					}//hover
 				}//on
 
-
-
+				&:not(.on) {
+					.marker{
+						background-color: transparent !important;
+					}
+				}
 
 				.layer-opacity, .layer-clear {
 					.ico-24;
@@ -518,7 +539,7 @@ header {
 	}//.map-layer-group
 }//#legend-panel
 
-#addlayer-panel {
+#addlayer-panel, #legend-panel {
 	background: @white;
 	.panel-header {
 		background: @light-grey;
@@ -619,111 +640,124 @@ header {
 				&.current {
 					display: block;
 				}
+			}
+		}
 
-				.map-header {
+		.tabs-content, .panel-body{
 
-					label {
-						.title-ban;
-						padding: 0px 30px 0px 44px;
-
-						margin-left:0;
-						line-height: 37/11;
-						&:before {
-							left:22px;
-							top:13px;
-						}//before
-					}//label
-					input:checked + label{
-						color:@dark-grey-l;
-					}
-					input:checked + label::before {
-						border-color:@dark-grey;
-						background-color: @dark-grey;
-					}
-				}//map-header
-
-			input {
-				  position: absolute;
-				  left: -9999px;
-				}
+			.map-header {
 
 				label {
-				  display: block;
-				  position: relative;
-				  .font-size(1.3);
-				  line-height: 27/13;
-				  // margin: 20px;
-				  padding: 0px 30px 0px 0px;
-				  margin-left:44px;
-				  // border: 3px solid #fff;
-				  // border-radius: 100px;
-				  color: @light-grey-d;
-				  // background-color: #6a8494;
-				  // box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-				  white-space: nowrap;
-				  cursor: pointer;
-				  user-select: none;
-				  transition: background-color .2s, box-shadow .2s;
-				  border-bottom:1px solid #e5e5e6;
+					.title-ban;
+					padding: 0px 30px 0px 44px;
+					margin-left:0;
+					line-height: 37/11;
 
-					&:hover {
-				  		&:before {
-				  			border-color:@blue-link;
-				  			background: fade(@blue-link, 5%);
-				  		}//before
-				  }//hover
+					&:before {
+						left:22px;
+						top:13px;
+					}//before
 
+					.subtitle {
+						text-transform: none;
+						color:@black;
+					}
+
+					.check {
+						left: 22px;
+						top: 12px;
+					}
+				}//label
+
+				input:checked + label{
+					color:@dark-grey-l;
 				}
 
-				/*label::before, */.check {
-				  content: '';
-				  display: block;
-				  position: absolute;
-				  top: 7px;
-				  // bottom: 10px;
-				  left: -22px;
-				  width: 12px;
-				  height:12px;
-				  border: 1px solid #9e9e9e;
-				  border-radius: 50%;
-				  transition: background-color .2s;
-
+				input:checked + label::before {
+					border-color:@dark-grey;
+					background-color: @dark-grey;
 				}
+			}//map-header
+
+			input {
+			  position: absolute;
+			  left: -9999px;
+			}
+
+			label {
+				display: block;
+				position: relative;
+				.font-size(1.3);
+				line-height: 27/13;
+				// margin: 20px;
+				padding: 0px 30px 0px 0px;
+				margin-left:44px;
+				// border: 3px solid #fff;
+				// border-radius: 100px;
+				color: @light-grey-d;
+				// background-color: #6a8494;
+				// box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+				white-space: nowrap;
+				cursor: pointer;
+				user-select: none;
+				transition: background-color .2s, box-shadow .2s;
+				border-bottom:1px solid #e5e5e6;
+
+				&:hover {
+					&:before {
+						border-color:@blue-link;
+						background: fade(@blue-link, 5%);
+					}//before
+				}//hover
+			}
+
+			.check {
+				display: block;
+				position: absolute;
+				top: 7px;
+				// bottom: 10px;
+				left: -22px;
+				width: 12px;
+				height:12px;
+				border: 1px solid #9e9e9e;
+				border-radius: 50%;
+				transition: background-color .2s;
+			}
 
 
-				label:hover, input:focus + label {
-				  // box-shadow: 0 0 20px rgba(0, 0, 0, .6);
-				}
+			label:hover, input:focus + label {
+				// box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+			}
 
-				input:checked + label {
-				  // background-color: #ab576c;
-				  color:@darker-grey;
-				  // background: lighten(@blue-link, 50%);
+			input:checked + label {
+				// background-color: #ab576c;
+				color:@darker-grey;
+				// background: lighten(@blue-link, 50%);
 
-				  .check {
-				  	background-color: @blue-link;
-				  }
-				}
-
-				input:checked + label .check {
-				  background-color: #fff;
-				}
-
-				input:checked + label .check {
-  					background-color:  @blue-link;
-  					border-color:@blue-link;
-				}
-
-				input:not(:checked) + label .check {
-					background-color: transparent !important;
+				.check {
+					background-color: @blue-link;
 				}
 			}
-		}//tabs-content
-	}//panel-content
+
+			input:checked + label .check {
+			  background-color: #fff;
+			}
+
+			input:checked + label .check {
+					background-color:  @blue-link;
+					border-color:@blue-link;
+			}
+
+			input:not(:checked) + label .check {
+				background-color: transparent !important;
+			}
+		}
+	}//tabs-content
+}//panel-content
 
 
 
-}/*addlayer-panel*/
+//}/*addlayer-panel*/
 
 
 /* temp #addlayer marker colors (for presentation) */

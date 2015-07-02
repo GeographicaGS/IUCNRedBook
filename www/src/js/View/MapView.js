@@ -5,15 +5,15 @@ App.View.Map = Backbone.View.extend({
   },
 
   initialize: function() {
-    $("#map").outerHeight($("#map").outerHeight()-$("footer").outerHeight()-$("header").outerHeight());
-    $("#map").css({"top": $("header").outerHeight()});
+    //$("#map").outerHeight($("#map").outerHeight()-$("footer").outerHeight()-$("header").outerHeight());
+    //$("#map").css({"top": $("header").outerHeight()});
 
     //create the left map's leaflet instance
     this._map = new L.Map('map', {'zoomControl': false}).setView([App.Cons.iniLat, App.Cons.iniLng], App.Cons.iniZoom);
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(this._map);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+        {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
+    ).addTo(this._map);
 
     // add zoom control to map left
     var zoomControl = new L.Control.Zoom({
@@ -34,6 +34,11 @@ App.View.Map = Backbone.View.extend({
         model: this._tooltipModel
     });
     $('#map').append(this._tooltip.$el);
+
+    this.listenTo(App.currentLayers, 'add', this.addLayer);
+    this.listenTo(App.currentLayers, 'remove', this.removeLayer);
+    this.listenTo(App.currentLayers, 'change:visible', this.updateLayers);
+    this.listenTo(App.currentLayers, 'change:opacity', this.updateLayers);
 
     /*this._map.on("click",function(e){
       $.fancybox($("#container_feature_info"), {
@@ -93,6 +98,27 @@ App.View.Map = Backbone.View.extend({
     // $("#map").show();
 
     return this;
+  },
+
+  addLayer: function(layerModel) {
+      console.log('add');
+      if(layerModel != null){
+		var gSLayerWMS = new GSLayerWMS(layerModel.get('id'), layerModel.get('title'), layerModel.get('wmsServer'), layerModel.get('wmsLayName'), 1000, this._map);
+		var z_index = layerModel.get('category') + layerModel.get('topic') + layerModel.get('order');
+		gSLayerWMS.setVisibility(true, z_index, this._map._zoom);
+        layerModel.set({'layerInstance': gSLayerWMS});
+	}
+  },
+
+  removeLayer: function(elem) {
+      console.log('remove');
+      elem.get('layerInstance').setVisibility(false, null, null);
+  },
+
+  updateLayers: function(elem) {
+      console.log('update');
+      var gSLayerWMS = elem.get('layerInstance');
+      gSLayerWMS.setVisibility(elem.get('visible'), gSLayerWMS.z_index, this._map._zoom);
   },
 
 });

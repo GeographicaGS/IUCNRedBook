@@ -1,8 +1,8 @@
 'use strict';
 
-App.View.LayerGroup = Backbone.View.extend({
+App.View.MapLayerGroup = Backbone.View.extend({
 
-	_template : $('#layerPanel-layer_group_template').html(),
+	_template : $('#mapLayerPanel-layer_group_template').html(),
 	className: 'layerItemGroup',
 
 	events: {
@@ -35,7 +35,7 @@ App.View.LayerGroup = Backbone.View.extend({
 
 	renderGroup: function(){
 		for (var i = 0; i < this.model.layers.length; i++ ){
-			var layer = new App.View.LayerItem({model: this.model.layers[i]});
+			var layer = new App.View.MapLayerItem({model: this.model.layers[i]});
 			this.$content.append(layer.render().$el);
 		}
 	},
