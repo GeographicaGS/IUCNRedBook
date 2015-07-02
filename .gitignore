@@ -41,3 +41,5 @@ tags
 backend/sampledata/*.csv
 backend/sampledata/config.js
 backend/api/config.js
+
+CONFIGFILE

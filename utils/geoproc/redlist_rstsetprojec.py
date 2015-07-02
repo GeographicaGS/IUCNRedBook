@@ -24,29 +24,32 @@ import gdal
 import osr
 
 
-def rstSetProj(indata):
+def rstSetProj(indata, epsg_code):
 
     in_ds = gdal.Open(indata, gdal.GA_Update)
     srs = osr.SpatialReference()
-    srs.ImportFromEPSG(23029)
+    srs.ImportFromEPSG(epsg_code)
     srs_wkt = srs.ExportToWkt()
+
+    print "Coordinate Reference System".format(srs_wkt)
 
     in_ds.SetProjection(srs_wkt)
 
+    in_ds.FlushCache()
     in_ds = None
 
 
 def main():
     infolder='/myfolder'
-
     fl_fltr = ".tif"
+    epsg_code = 32629
 
     for subdir, dirs, files in os.walk(infolder):
         for fl in files:
             if os.path.splitext(fl)[1] == fl_fltr:
                 indata = os.path.join(subdir, fl)
 
-                result = rstSetProj(indata)
+                result = rstSetProj(indata, epsg_code)
                 print result
                 if result != 0:
                     print "Setting projection failed: {}".format(indata)

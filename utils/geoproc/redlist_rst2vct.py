@@ -27,7 +27,7 @@ from osgeo import gdal, ogr, osr
 
 def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
 
-    in_ds = gdal.Open(indata)
+    in_ds = gdal.Open(indata, gdal.GA_ReadOnly)
 
     if in_ds is None:
         print "Unable to open {}".format(indata)
@@ -107,6 +107,6 @@ def main():
 
 if __name__ == "__main__":
 
-    gdal.UseExceptions()
+    # gdal.UseExceptions()
 
     main()
