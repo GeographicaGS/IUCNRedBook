@@ -26,6 +26,10 @@ from osgeo import gdal, ogr, osr
 
 
 def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
+    """
+    Convert raster layer to vector polygon layer (Shapefile is the default format)
+
+    """
 
     in_ds = gdal.Open(indata, gdal.GA_ReadOnly)
 
@@ -62,7 +66,11 @@ def rst2vct(indata, outdata, band_n=1, maskband=None, frmt="ESRI Shapefile"):
 
 
 def filterShpByValue(indata, flt_outdata, flt_field, flt_value, frmt="ESRI Shapefile"):
-    # Get the input Layer
+    """
+    Create vector layer filtering another vector layer by attribute
+
+    """
+
     in_drv = ogr.GetDriverByName(frmt)
     in_ds = in_drv.Open(indata, 0)
     in_lyr = in_ds.GetLayer()

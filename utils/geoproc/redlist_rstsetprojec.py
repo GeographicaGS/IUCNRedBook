@@ -25,8 +25,17 @@ import osr
 
 
 def rstSetProj(indata, epsg_code):
+    """
+    Define raster Coordinate Reference System
+    
+    """
 
     in_ds = gdal.Open(indata, gdal.GA_Update)
+
+    if in_ds is None:
+        print "Unable to open {}".format(indata)
+        sys.exit(1)
+
     srs = osr.SpatialReference()
     srs.ImportFromEPSG(epsg_code)
     srs_wkt = srs.ExportToWkt()

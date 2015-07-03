@@ -1,14 +1,11 @@
+
 -- Role: redlist_admin
-
 -- DROP ROLE redlist_admin;
-
 CREATE ROLE redlist_admin LOGIN
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 
 -- Database: redlist
-
 -- DROP DATABASE redlist;
-
 CREATE DATABASE redlist
   WITH OWNER = redlist_admin
        ENCODING = 'UTF8'
@@ -26,7 +23,7 @@ ALTER SCHEMA layers OWNER TO redlist_admin;
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
--- Enable PostGIS (includes raster)
+-- Enable PostGIS
 CREATE EXTENSION postgis;
 -- Enable Topology
 CREATE EXTENSION postgis_topology;

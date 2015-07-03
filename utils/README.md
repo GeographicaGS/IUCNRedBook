@@ -1,5 +1,6 @@
 ## Utils
 
 Scripts and utilities:
-- SQL (PostGIS).
-- Python geoprocessing scripts.
+- SQL scripts (PostGIS).
+- Python and shell geoprocessing scripts.
+- SLD files (Styled Layer Descriptor).
