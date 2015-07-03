@@ -204,7 +204,7 @@ header {
 		}//addLayer
 	}//header
 
-	.panel-body{
+	.panel-content{
 		.position(fixed, 115px, auto, auto, 16px);
 		// bottom:100%;
 
@@ -233,7 +233,7 @@ header {
 		header{
 				border-radius: 4px 4px 0 0;
 		}
-		.panel-body {
+		.panel-content {
 
 			opacity:1;
 			transform: scaleY(1);
@@ -423,6 +423,96 @@ header {
 						}
 						.o-slider-wrapper {
 							display: block;
+
+							input[type=range] {
+								width: 100%;
+								outline: none;
+								-webkit-appearance: none;
+
+								&::-webkit-slider-runnable-track {
+									background: #94908e;
+									border-radius: 2px;
+									height:4px;
+									width:102px;
+								}
+
+								&::-moz-range-track {
+									background: #94908e;
+									border-radius: 2px;
+									height:4px;
+									width:102px;
+								}
+
+								&::-ms-track {
+									background: transparent;
+									border-radius: 2px;
+									height:4px;
+									width:100%;
+
+									// Make room for a thumb taller than the track
+									border-color: transparent;
+    								border-width: 5px 0;
+
+									// Remove default ticks
+									color: transparent;
+								}
+
+								&::-ms-fill-lower {
+									background: #94908e;
+									border-radius: 2px;
+								}
+
+								&::-ms-fill-upper {
+									background: #94908e;
+									border-radius: 2px;
+								}
+
+								&::-webkit-slider-thumb {
+									-webkit-appearance: none;
+									.square(14px);
+									background: @off-white;
+									border: 1px solid #cbc8c8;
+									border-radius: 50%;
+									position: relative;
+									top:-4px;
+									box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.2);
+									cursor:pointer;
+									&:hover{
+										background: @white;
+									}
+								}
+
+								&::-moz-range-thumb{
+									.square(14px);
+									background: @off-white;
+									border: 1px solid #cbc8c8;
+									border-radius: 50%;
+									position: relative;
+									top:-4px;
+									box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.2);
+									cursor:pointer;
+									&:hover{
+										background: @white;
+									}
+								}
+
+								&::-ms-thumb {
+									.square(14px);
+									background: @off-white;
+									border: 1px solid #cbc8c8;
+									border-radius: 50%;
+									box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.2);
+									cursor:pointer;
+									&:hover{
+										background: @white;
+									}
+								}
+
+								&:focus, &:active, &::-moz-focus-inner {
+									border: none;
+									outline: none;
+								}
+							}
 						}
 					}//hover
 
@@ -539,8 +629,12 @@ header {
 	}//.map-layer-group
 }//#legend-panel
 
-#addlayer-panel, #legend-panel {
+#addlayer-panel {
 	background: @white;
+}
+
+#addlayer-panel, #legend-panel {
+
 	.panel-header {
 		background: @light-grey;
 		// padding: 14px 10px;
@@ -819,6 +913,10 @@ header {
 			transform: rotate(180deg);
 			transform-origin: center center;
 			transition:transform .3s;
+
+			height: 16px;
+			width: 5px;
+
 			.open & {
 				transform: rotate(0deg);
 			}
@@ -994,4 +1092,10 @@ footer {
 		}//li
 	}
 
+}
+
+// Fix slider position on IE11
+_:-ms-input-placeholder, :root #legend-panel .layer-opacity input[type=range] {
+	position: relative;
+	top: -10px;
 }

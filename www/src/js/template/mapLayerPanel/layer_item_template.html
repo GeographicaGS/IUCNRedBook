@@ -1,4 +1,4 @@
-<li class="layerItem {{#visible}}on{{/visible}}">
+<li class="layerItem {{#visible}}on{{/visible}}" data-layerid='{{id}}'>
     <!-- <input id="layer{{id}}" data-layerid="{{id}}" type="checkbox"> -->
     <span class="marker" {{#color}}style="background-color: {{color}}; border-color: {{color}}"{{/color}}></span>
     <label id="maplayer{{id}}">
@@ -10,10 +10,7 @@
         <span class='ico-opacity'></span>
         <div class='o-make-visible'>
             <div class='o-slider-wrapper'>
-                <div class='o-slider-bar'>
-                    <div class='o-slider-handle'></div>
-                </div>
-                <div class='o-slider-tip'></div>
+                <input class="layer-opacity-range" type="range" min="0" max="100" value="100">
             </div>
         </div>
     </span>

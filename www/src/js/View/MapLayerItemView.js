@@ -8,6 +8,7 @@ App.View.MapLayerItem = Backbone.View.extend({
 		'click label': 'toggleVisible',
         'click .marker': 'toggleVisible',
         'click .layer-clear': 'deleteLayer',
+        'change .layer-opacity-range': 'changeOpacity'
 	},
 
 	initialize: function() {
@@ -42,5 +43,12 @@ App.View.MapLayerItem = Backbone.View.extend({
         if(e)
             e.preventDefault();
         App.currentLayers.remove(this.model);
-    }
+    },
+
+    changeOpacity: function(e){
+        if(e)
+            e.stopPropagation();
+        var opacity = e.target.value / 100;
+        this.model.set({'opacity': opacity});
+    },
 });

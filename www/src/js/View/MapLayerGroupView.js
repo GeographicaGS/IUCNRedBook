@@ -6,7 +6,7 @@ App.View.MapLayerGroup = Backbone.View.extend({
 	className: 'layerItemGroup',
 
 	events: {
-		'click .toggle_btn': 'toggle'
+		'click .layer-toggle': 'toggleChildren'
 	},
 
 	initialize: function() {
@@ -40,15 +40,10 @@ App.View.MapLayerGroup = Backbone.View.extend({
 		}
 	},
 
-	toggle: function(e) {
+	toggleChildren: function(e) {
 		e.preventDefault();
-		var $target = $(e.currentTarget);
-		if($target.hasClass('contracted')){
-			$target.removeClass('contracted');
-			this.$content.slideDown();
-		}else{
-			$target.addClass('contracted');
-			this.$content.slideUp();
-		}
+		var layers = this.$el.find('li');
+		console.log(layers);
+		//App.currentLayers.get(layers)
 	}
 });

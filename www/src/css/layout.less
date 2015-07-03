@@ -2,6 +2,8 @@ html, body, #main, #map {
   height: 100%;
 }
 
+input::-moz-focus-inner {border:0;}
+
 header,
 #legend-panel,
 #content,
@@ -55,7 +57,7 @@ main {
     width: 50%;
     transition: transform .2s ease-out;
     height: calc(~"100% - (61px+35px)");
-    transform: ~"translateX(calc(100% - 10px))";
+    transform: translateX(100%) translateX(-10px);
     .content-standard {
         position: absolute;
         padding: 76px 10.953058321%; /* 77 (originally 77) / 703 */
