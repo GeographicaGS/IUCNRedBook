@@ -20,23 +20,30 @@
 #  MA 02110-1301, USA.
 #
 
+######################################################################
+# Before execute this script you need a CONFIGFILE properly          #
+# formed (See CONFIGFILE_example) in your current/working directory. #
+######################################################################
+
 CURRDIR=$(pwd)
 . $CURRDIR/CONFIGFILE
 
-for fl in $GEODATAFOLDER/*.shp;
-  do
-    (
-        for f in $fl;
-            do
-              (
-                printf '\n' && echo $f
-                shp=$(basename $f .shp)
-                shp2pgsql -s $CRS_EPSG $f $DBSCHEMA.$shp >> $SQLFILE
-              )
-            done
-      );
-  done
+SHPEXT=shp
+SHAPEFILES=$(find $GEODATAFOLDER -type f | grep \.$SHPEXT)
 
-  psql -h $HOST -d $DATABASE -p $PORT -U $USER -f $SQLFILE
+for SHP in $SHAPEFILES;
+    do
+        (
+          echo "\nProcessing file: " $SHP
+          LAYERNAME=$(basename $SHP .shp)
+          echo "SHP2PGSQL - exporting shapefile..."
+          shp2pgsql -s $CRS_EPSG $SHP $DBSCHEMA.$LAYERNAME >> $SQLFILE
+        )
+    done
 
-  $(rm $SQLFILE)
+echo "\nPSQL - Executing query: " $SQLFILE
+psql -h $HOST -d $DATABASE -p $PORT -U $USER -f $SQLFILE
+
+$(rm $SQLFILE)
+echo "\nRemoved generated SQL file..."
+echo "\nProcess finished\n"
