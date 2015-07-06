@@ -29,7 +29,7 @@ CURRDIR=$(pwd)
 . $CURRDIR/CONFIGFILE
 
 SHPEXT=shp
-SHAPEFILES=$(find $GEODATAFOLDER -type f | grep \.$SHPEXT)
+SHAPEFILES=$(find $GEODATAFOLDER -type f | grep "\."$SHPEXT)
 
 for SHP in $SHAPEFILES;
     do
@@ -37,12 +37,12 @@ for SHP in $SHAPEFILES;
           echo "\nProcessing file: " $SHP
           LAYERNAME=$(basename $SHP .shp)
           echo "SHP2PGSQL - exporting shapefile..."
-          shp2pgsql -s $CRS_EPSG $SHP $DBSCHEMA.$LAYERNAME >> $SQLFILE
+          shp2pgsql -s $CRS_EPSG -I $SHP $DBSCHEMA.$LAYERNAME >> $SQLFILE
         )
     done
 
 echo "\nPSQL - Executing query: " $SQLFILE
-psql -h $HOST -d $DATABASE -p $PORT -U $USER -f $SQLFILE
+psql -h $HOST -d $DATABASE -p $PORT -U $USER -f $SQLFILE -q
 
 $(rm $SQLFILE)
 echo "\nRemoved generated SQL file..."
