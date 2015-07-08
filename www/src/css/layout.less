@@ -63,6 +63,32 @@ main {
         padding: 76px 10.953058321%; /* 77 (originally 77) / 703 */
         height: calc(~"100% - 35px");
         overflow: auto;
+
+        clear:both;
+    	padding-bottom: 77px;
+    	color:@dark-grey;
+    	background: @light-grey;
+        
+    	h2{
+    		.font-size(4.8);
+    		line-height: 1;
+    		font-weight: 300;
+    		margin: 15px 0 20px;
+    	}//h2
+    	p.intro {
+    		.font-size(1.8);
+    		line-height: 24/18;
+    		font-weight: 300;
+    		margin-bottom: 20px;
+    	}
+    	h3 {
+    		margin:26px 0 10px ;
+    		display: block;
+    		.font-size(1.2);
+    		text-transform: uppercase;
+    		font-weight: 500;
+    		letter-spacing: 0.025em;
+    	}
     }
     &.open  {
     	width: 50%;
@@ -73,6 +99,11 @@ main {
     }
     #pdf-viewer {
         height: calc(~"100% - 35px");
+
+        iframe {
+            height: 100%;
+            width: 100%;
+        }
     }
 }//#content
 
@@ -94,6 +125,20 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+
+    .leaflet-right {
+        transform: translateX(-10px);
+        transition: transform .2s ease-out;
+    }
+
+    &.shrink {
+        .leaflet-control-container {
+            .leaflet-right {
+                transform: translateX(-50vw);
+            }
+        }
+    }
 }
 
 

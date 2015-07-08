@@ -1,8 +1,8 @@
-<ul>
-{{#data}}
-<li>
-    <h6>{{label}}</h6>
-    <p>{{value}}</p>
-</li>
-{{/data}}
-</ul>
+<div class="info-bubble">
+    <h6>{{ name }} {{#scientificname}}<em>({{scientificname}})</em>{{/scientificname}}</h6>
+    <ul class="layer-info-download">
+        {{#pdf}}<li class="toPDF" data-doc="{{pdf}}" data-page="{{page}}"><strong>PDF</strong> <lang>Ver en PDF</lang></li>{{/pdf}}
+        {{#gis}}<li><a href="{{gis}}"><strong>GIS</strong> <lang>Descargar datos GIS</lang></a></li>{{/gis}}
+        {{#xls}}<li><a href="{{xls}}"><strong>XLS</strong> <lang>Descargar datos XLS</lang></a></li>{{/xls}}
+    </ul>
+</div>

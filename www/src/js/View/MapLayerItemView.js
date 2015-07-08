@@ -26,15 +26,17 @@ App.View.MapLayerItem = Backbone.View.extend({
             'pdf': this.model.get('pdf_' + App.lang),
             'page': this.model.get('page_' + App.lang)
         });
-
 		this.setElement(Mustache.render(this._template, this.model.toJSON() ));
+
+        if(this.model.get('visible')){
+            this.$el.find('.layer-opacity-range').val(this.model.get('opacity')*100);
+        }
 
         return this;
 	},
 
 	toggleVisible: function(e) {
         e.preventDefault();
-        //this.$el.toggleClass('on');
         this.model.set({'visible': !this.model.get('visible')});
         this.model.collection.trigger('update');
 	},

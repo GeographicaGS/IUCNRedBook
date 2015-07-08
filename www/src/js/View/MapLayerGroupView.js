@@ -43,7 +43,10 @@ App.View.MapLayerGroup = Backbone.View.extend({
 	toggleChildren: function(e) {
 		e.preventDefault();
 		var layers = this.$el.find('li');
-		console.log(layers);
-		//App.currentLayers.get(layers)
+		var allHidden = this.$el.find('li.on').length === 0;
+		layers.each(function(index){
+			$(this).toggleClass('on', allHidden);
+			App.currentLayers.get($(this).data('layerid')).set({'visible': allHidden});
+		});
 	}
 });

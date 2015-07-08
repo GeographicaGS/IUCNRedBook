@@ -28,6 +28,7 @@ node_modules
 
 www/www/es/index.html
 www/www/en/index.html
+www/www/fr/index.html
 www/www/js/main.min.js
 www/www/js/main.min.map
 www/www/css/styles.min.css

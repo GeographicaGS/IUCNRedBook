@@ -108,12 +108,12 @@ header {
 				ul.lang-selector {
 					position: absolute;
 					width:100%;
-					height:0;
+					max-height:0;
 					opacity:0;
 					overflow: hidden;
 					.font-size(1.3);
 					line-height: 26/13;
-					transition: opacity, height, .2s linear;
+					transition: opacity, max-height, .2s linear;
 					box-shadow: 0 3px 5px -4px rgba(0,0,0,.4);
 					// border: 1px solid @light-g-ui;
 					// border-top: 0 none;
@@ -136,7 +136,7 @@ header {
 
 			&:hover {
 					.lang-selector {
-						height:56px;
+						max-height: 56px;
 						opacity:1;
 
 					}//.lang-selector
@@ -959,30 +959,6 @@ header {
 }//.close
 
 #about {
-	clear:both;
-	padding-bottom: 77px;
-	color:@dark-grey;
-	background: @light-grey;
-	h2{
-		.font-size(4.8);
-		line-height: 1;
-		font-weight: 300;
-		margin: 15px 0 20px;
-	}//h2
-	p.intro {
-		.font-size(1.8);
-		line-height: 24/18;
-		font-weight: 300;
-		margin-bottom: 20px;
-	}
-	h3 {
-		margin:26px 0 10px ;
-		display: block;
-		.font-size(1.2);
-		text-transform: uppercase;
-		font-weight: 500;
-		letter-spacing: 0.025em;
-	}
 	.credit-logos{
 		.clearfix();
 		margin: 0 -20px;
@@ -1026,13 +1002,20 @@ footer {
 			margin-left: 8px;
 		}
 	}
+
+	.geographica {
+		float: right;
+	}
 }
 
 /* Info Bubble
 ========================================================================================= */
+.leaflet-popup-content-wrapper {
+	border-radius: 4px;
+}
 
 .info-bubble {
-	.tip-b(@white, @light-g-ui, 12px, 14px, 4px);
+	/*.tip-b(@white, @light-g-ui, 12px, 14px, 4px);
 	&:after,&:before {
 		margin-left: -7px;
 	}
@@ -1043,8 +1026,8 @@ footer {
 	background-color: @white;
 	border-color:1px solid @light-g-ui;
 	padding: 15px;
-	box-shadow: 0 3px 5px -2px rgba(0,0,0,.4);
-	min-width:240px;
+	box-shadow: 0 3px 5px -2px rgba(0,0,0,.4);*/
+	min-width: 190px;
 
 
 
@@ -1059,6 +1042,11 @@ footer {
 			color: @light-grey-d;
 		}
 	}//h6
+
+	a {
+		color: inherit;
+	}
+
 	ul.layer-info-download {
 		li {
 			.font-size(1.3);

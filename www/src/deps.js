@@ -42,7 +42,7 @@ deps.JS = [
     'js/View/MapLayerGroupView.js',
     'js/View/MapLayerPanelView.js',
     'js/View/ContentPanelView.js',
-    'js/View/TooltipMapView.js',
+    'js/View/MapTooltipView.js',
     'js/View/MapView.js',
     'js/View/MainView.js',
 

@@ -84,6 +84,10 @@ App.View.AddLayerPanel = Backbone.View.extend({
     updateActive: function(){
         this.$el.find('input[type="checkbox"]').prop('checked', false);
         App.currentLayers.each(this.updateLayer, this);
+        var counter = App.currentLayers.layersByCategory();
+        this.$tabsNav.each(function(index){
+            $(this).find('.counter').html(counter[index] || '');
+        });
     },
 
     updateLayer: function(elem, index){

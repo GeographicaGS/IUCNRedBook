@@ -46,15 +46,17 @@
         </a><!-- brand -->
         <nav>
             <ul class="main-nav">
-                <li class="to-about active"href="#"><lang>Acerca de</lang></li>
+                <li class="to-about active"><lang>Acerca de</lang></li>
                 <li class="to-help"><lang>Ayuda</lang></li>
-                <li class="btn"><a target="_blank" href="/pdf/lref_marruecos.pdf"><span class="fa fa-file-pdf-o"></span><lang>Descargar PDF</lang></a></li>
+                <li class="btn"><a target="_blank" href="/data/pdf/lref_marruecos.pdf"><span class="fa fa-file-pdf-o"></span><lang>Descargar PDF</lang></a></li>
             </ul>
         </nav>
         <div id="lang">
-            <div class="selected-lang"><lang>fr</lang>
+            <div class="selected-lang">
+                <span>es</span>
                 <ul class="lang-selector">
-                    <li><lang>es</lang></li>
+                    <li data-lang="es"><a href="/es"><lang>es</lang></a></li>
+                    <li data-lang="fr"><a href="/fr"><lang>fr</lang></a></li>
                 </ul>
 
                 <span class="caret"></span>
@@ -64,7 +66,10 @@
     <div id="main"></div>
     <footer>
         <div class="credits">
-            <span>2015 © <a href="#"><lang>IUCN, International Union for Conservation of Nature</lang></a></span>
+            <span class="legal">2015 © <a href="#"><lang>IUCN, International Union for Conservation of Nature</lang></a>
+                <a href="contact" jslink><lang>Contacto</lang></a>
+                <a href="legal" jslink><lang>Legal</lang></a>
+                <a href="privacy" jslink><lang>Privacidad</lang></a></span>
             <a href="http://www.geographica.gs/" target="blank" class="geographica"><span><lang>D+D by Geographica</lang><img src="/img/uicn_lr_logo_geo.svg" /></span></a>
         </div>
     </footer>
