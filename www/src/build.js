@@ -8,7 +8,7 @@ sting.make({
     "deps" : deps,
     "outputPath" : "../www",
     // Languages
-    "langs" : ["es","en"],
+    "langs" : ["es","fr"],
     //"outSourceMap" :  debug ? "main.min.map" : null
     //"outSourceMap" :  "main.min.map"
     "outSourceMap" :  null

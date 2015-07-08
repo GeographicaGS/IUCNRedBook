@@ -1,15 +1,18 @@
 'use strict';
 
-App.View.LayerGroup = Backbone.View.extend({
+App.View.AddLayerGroup = Backbone.View.extend({
 
-	_template : $('#layerPanel-layer_group_template').html(),
+	_template : $('#addLayerPanel-layer_group_template').html(),
 	className: 'layerItemGroup',
 
 	events: {
 		'click .toggle_btn': 'toggle'
 	},
 
-	initialize: function() {
+	initialize: function(options) {
+		if(options && options.isLegend){
+			this.isLegend = options.isLegend;
+		}
 		//this.render();
 	},
 
@@ -35,7 +38,7 @@ App.View.LayerGroup = Backbone.View.extend({
 
 	renderGroup: function(){
 		for (var i = 0; i < this.model.layers.length; i++ ){
-			var layer = new App.View.LayerItem({model: this.model.layers[i]});
+			var layer = new App.View.AddLayerItem({model: this.model.layers[i]});
 			this.$content.append(layer.render().$el);
 		}
 	},

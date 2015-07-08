@@ -21,5 +21,36 @@ App.Collection.Categories = Backbone.Collection.extend({
 		});
 
 		return layers;
+	},
+
+	getLayerById : function(id){
+		if(!id) return this;
+
+		var currentCatIndex = 0;
+		var currentSubcatIndex = 0;
+		foundLayer = null;
+		this.each(function(category){
+			_.each(category.get("topics"), function(topic){
+				_.each(topic.layers, function(layer){
+					if (layer.id === id){
+						layer.category = currentCatIndex;
+						layer.topic = currentSubcatIndex;
+						foundLayer = new App.Model.Layer(layer);
+					}
+				});
+				currentSubcatIndex++;
+			});
+			currentCatIndex++;
+		});
+
+		return foundLayer;
+	},
+
+	clearAllLayers: function(){
+		this.each(function(category){
+			_.each(category.get("topics"), function(topic){
+				topic.layers = []
+			});
+		});
 	}
 });

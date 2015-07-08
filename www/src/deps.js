@@ -35,12 +35,14 @@ deps.JS = [
     // --------------------
     'js/View/ErrorView.js',
     'js/View/NotFoundView.js',
-    'js/View/LayerItemView.js',
-    'js/View/LayerGroupView.js',
+    'js/View/AddLayerItemView.js',
+    'js/View/AddLayerGroupView.js',
     'js/View/AddLayerPanelView.js',
+    'js/View/MapLayerItemView.js',
+    'js/View/MapLayerGroupView.js',
     'js/View/MapLayerPanelView.js',
     'js/View/ContentPanelView.js',
-    'js/View/TooltipMapView.js',
+    'js/View/MapTooltipView.js',
     'js/View/MapView.js',
     'js/View/MainView.js',
 
@@ -52,7 +54,7 @@ deps.JS = [
 
     // others
     'js/Catalog.js',
-    //'js/Map.js',
+    'js/gSLayerWMS.js',
 ];
 
 

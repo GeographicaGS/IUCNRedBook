@@ -2,7 +2,7 @@
 
 App.View.MapLayerPanel = Backbone.View.extend({
 
-    _template: $('#layerPanel-layer_panel_template').html(),
+    _template: $('#mapLayerPanel-layer_panel_template').html(),
     _addLayerPanel: null,
 
     events: {
@@ -13,9 +13,7 @@ App.View.MapLayerPanel = Backbone.View.extend({
     initialize: function() {
         this._addLayerPanel = new App.View.AddLayerPanel();
         this.listenTo(this._addLayerPanel, 'close', this.hideAddLayerPanel);
-        this.listenTo(this._addLayerPanel, 'layerAdd', this.addLayer);
-        this.listenTo(this._addLayerPanel, 'layerDel', this.removeLayer);
-
+        this.listenTo(App.currentLayers, 'update', this.renderAll);
         this.render();
         this.$panelEl = this.$el.find("#legend-panel");
     },
@@ -26,9 +24,33 @@ App.View.MapLayerPanel = Backbone.View.extend({
     },
 
     render: function() {
-        this.$el.html(Mustache.render(this._template, {}));
+        this.$el.html(Mustache.render(this._template, App.BaseCatalog));
+        this.$categoriesContainer = this.$('.panel-content .inner div');
         this.$('#addLayerPanel').html(this._addLayerPanel.el);
+        App.baseCatalog.each(this.renderTab, this);
+        this.$groupsContainer = this.$categoriesContainer.find('.layerItemGroup ul');
+
         return this;
+    },
+
+    renderAll: function() {
+        this.$groupsContainer.empty();
+        App.currentLayers.each(this.renderLayer, this);
+    },
+
+    renderTab: function(elem, index) {
+        var topics = elem.get('topics');
+        for (var i = 0; i < topics.length; i++){
+            topics[i]['category'] = elem.get('title');
+            topics[i]['icon'] = elem.get('icon');
+            var group = new App.View.MapLayerGroup({model:topics[i]});
+            this.$categoriesContainer.eq(index).append(group.render().$el);
+        }
+    },
+
+    renderLayer: function(elem, index){
+        var layer = new App.View.MapLayerItem({model:elem});
+        this.$groupsContainer.eq(elem.get('topic')).append(layer.render().$el);
     },
 
     toggleOpen: function(ev) {
@@ -52,11 +74,7 @@ App.View.MapLayerPanel = Backbone.View.extend({
         this.$panelEl.toggleClass('hide');
     },
 
-    addLayer: function(layer){
-        console.dir(layer);
-    },
-
-    removeLayer: function(layer){
-        console.dir(layer);
+    refreshLayers: function(){
+        this.$el.html(Mustache.render(this._template, App.currentLayers));
     },
 });

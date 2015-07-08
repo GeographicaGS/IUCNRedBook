@@ -2,7 +2,7 @@
 
 App.View.AddLayerPanel = Backbone.View.extend({
 
-    _template : $('#layerPanel-add_layer_panel_template').html(),
+    _template : $('#addLayerPanel-layer_panel_template').html(),
 
     events: {
         'click .btn-cancel': 'closePanel',
@@ -14,6 +14,8 @@ App.View.AddLayerPanel = Backbone.View.extend({
         this.collection = App.catalog;
         this.render();
         this.$panelEl = this.$el.find("#addlayer-panel");
+
+        this.listenTo(App.currentLayers, 'update', this.updateActive);
     },
 
     onClose: function(){
@@ -22,15 +24,14 @@ App.View.AddLayerPanel = Backbone.View.extend({
     },
 
     render: function() {
-        for (var index in App.Catalog.categories){
-            App.Catalog.categories[index]['title'] = App.Catalog.categories[index]['title_'+App.lang];
-        }
         this.$el.html(Mustache.render(this._template, App.Catalog));
-        this.$el.find('.tabs-nav li:first-child').addClass('current');
-        this.$el.find('.tabs-content div:first-child').addClass('current');
 
         this.$tabsNav = this.$('.tabs-nav li');
         this.$tabsContent = this.$('.tabs-content div');
+
+        this.$tabsNav.eq(0).addClass('current');
+        this.$tabsContent.eq(0).addClass('current');
+
         this.renderAll();
 
         return this;
@@ -43,7 +44,9 @@ App.View.AddLayerPanel = Backbone.View.extend({
     renderTab: function(elem, index) {
         var topics = elem.get('topics');
         for (var i = 0; i < topics.length; i++){
-            var group = new App.View.LayerGroup({model:topics[i]});
+            topics[i]['category'] = elem.get('title');
+            topics[i]['icon'] = elem.get('icon');
+            var group = new App.View.AddLayerGroup({model:topics[i]});
             this.$tabsContent.eq(index).append(group.render().$el);
         }
         // this.$tabsNav.eq(index).find('.counter').html(elem.totalLayerCount());
@@ -76,6 +79,19 @@ App.View.AddLayerPanel = Backbone.View.extend({
             this.$el.find('.tabs-content div#'+target.data('tab')).addClass('current');
         }
 
+    },
+
+    updateActive: function(){
+        this.$el.find('input[type="checkbox"]').prop('checked', false);
+        App.currentLayers.each(this.updateLayer, this);
+        var counter = App.currentLayers.layersByCategory();
+        this.$tabsNav.each(function(index){
+            $(this).find('.counter').html(counter[index] || '');
+        });
+    },
+
+    updateLayer: function(elem, index){
+        this.$el.find('#layer' + elem.get('id')).prop('checked', true);
     },
 
 });

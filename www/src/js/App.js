@@ -19,18 +19,7 @@ App.events = {};
 
 _.extend(App.events , Backbone.Events);
 
-App.events.on('context:change',function(ctxData){
-    if (ctxData.type == App.Cons.TYPE_TWEETS){
-        $('.info-panel').hide();
-    }
-    else{
-        $('.info-panel').show();
-    }
-});
-
-
 $(function() {
-
     $(document).ajaxError(function(event, jqxhr) {
         if (jqxhr.status == 404) {
             App.router.navigate('notfound',{trigger: true});
@@ -81,8 +70,8 @@ App.detectCurrentLanguage = function(){
     if (document.URL.indexOf('/es/') != -1 || document.URL.endsWith('/es')) {
         return 'es';
     }
-    else if (document.URL.indexOf('/en/') != -1 || document.URL.endsWith('/en')) {
-        return 'en';
+    else if (document.URL.indexOf('/fr/') != -1 || document.URL.endsWith('/fr')) {
+        return 'fr';
     }
 
     return 'es';
@@ -93,10 +82,15 @@ App.ini = function(){
     this.lang = this.detectCurrentLanguage();
     moment.locale(this.lang);
 
-    this.currentLayers = new App.Collection.Categories();
-    this.catalog = new App.Collection.Categories(App.Catalog.categories);
+    this.currentLayers = new App.Collection.Layers();
 
-    var main = new App.View.Main();
+    for (var index in this.Catalog.categories){
+        this.Catalog.categories[index]['title'] = this.Catalog.categories[index]['title_'+this.lang];
+    }
+    this.catalog = new App.Collection.Categories(this.Catalog.categories);
+    this.BaseCatalog = JSON.parse(JSON.stringify(this.Catalog));
+    this.baseCatalog = new App.Collection.Categories(this.BaseCatalog.categories);
+    this.baseCatalog.clearAllLayers();
 
     // Be careful UPDATING the context, that's generated work
     // var options = ctx.toJSON();
@@ -104,26 +98,18 @@ App.ini = function(){
     // options.dateFilter.max = '31/12/2015';
     // ctx.update(options);
 
-    this.router = new App.Router({
-        //ctx: ctx,
-        map : map,
-        // groupChart : groupChart,
-        // dataPanel : dataPanel,
-        // sidebar : sidebar,
-        // timebar : timebar,
-        // filterHeader : filterHeader
-        // filter : filter
-    });
-
+    this.router = new App.Router();
     this.basePath = this.config.BASE_PATH + this.lang;
-
+    Backbone.history.start({pushState: true, root: this.basePath });
 
     this.$main = $('#main');
+    var main = new App.View.Main();
 
-    Backbone.history.start({pushState: true,root: this.basePath });
+    // Language selector
+    $('#lang .selected-lang span:not(.caret)').html(this.lang.toUpperCase());
+    $('#lang .selected-lang .lang-selector li[data-lang='+ this.lang.toLowerCase() +']').addClass('hidden');
 
     this.resizeMe();
-
 };
 
 
@@ -223,10 +209,6 @@ App.getBrowserInfo = function(){
     return M.join(' ');
 }
 
-App.getAPISQLURL = function(){
-    return 'https://' + App.config.account + '.cartodb.com/api/v2/sql/';
-}
-
 App.formatNumber = function (n,decimals){
 
     if (n===null){
@@ -261,51 +243,15 @@ App.formatNumber = function (n,decimals){
     }
 };
 
-// App.getFilterPetrolPumpTransactions = function (ctx){
-//     var query = '',
-//     typeFilters = ctx.typeFilter;
+App.isSupportedBrowser = function(){
+    var browser= App.getBrowserInfo();
 
+    if ((browser[0]=="IE" || browser[0] =="MSIE") && !isNaN(browser[1]) && parseFloat(browser[1]) < 10.0){
+        return false;
+    }
+    if (browser[0]=="Firefox" &&  !isNaN(browser[1]) && parseFloat(browser[1]) < 28.0){
+        return false;
+    }
 
-//     if(typeFilters){
-
-//         if(typeFilters.indexOf('gas') >= 0){
-//             query += ' AND familia_pago= \'gasolina\''
-//         }else if(typeFilters.indexOf('shop') >= 0){
-//             query += ' AND familia_pago= \'tienda\''
-//         }
-
-//         if(typeFilters.indexOf('pump') >= 0){
-//             query += ' AND payment_type= \'PAGO EN SURTIDOR\''
-//         }else if(typeFilters.indexOf('box') >= 0){
-//             query += ' AND payment_type= \'PAGO EN CAJA\''
-//         }else if(typeFilters.indexOf('refund') >= 0){
-//             query += ' AND payment_type= \'DEVOLUCIÓN EN CAJA\''
-//         }
-//     }
-//     return query;
-// };
-
-
-// App.getFilterPetrolPumpTransactions = function (ctx){
-//     var query = '',
-//     typeFilters = ctx.typeFilter;
-
-
-//     if(typeFilters){
-
-//         if(typeFilters.indexOf('gas') >= 0){
-//             query += ' AND familia_pago= \'gasolina\''
-//         }else if(typeFilters.indexOf('shop') >= 0){
-//             query += ' AND familia_pago= \'tienda\''
-//         }
-
-//         if(typeFilters.indexOf('pump') >= 0){
-//             query += ' AND payment_type= \'PAGO EN SURTIDOR\''
-//         }else if(typeFilters.indexOf('box') >= 0){
-//             query += ' AND payment_type= \'PAGO EN CAJA\''
-//         }else if(typeFilters.indexOf('refund') >= 0){
-//             query += ' AND payment_type= \'DEVOLUCIÓN EN CAJA\''
-//         }
-//     }
-//     return query;
-// };
+    return true;
+};
