@@ -14,12 +14,9 @@ CREATE OR REPLACE FUNCTION gs_redlist_createviews(name, name)
                               || ' GROUP BY ' || $2
         LOOP
             EXECUTE 'CREATE VIEW '
-                        || $1
-                        || '_'
-                        ||  rec.nm
+                        || $1 || '_' ||  rec.nm
                         || '_v AS SELECT * FROM '
-                        || $1
-                        || ' WHERE '
+                        || $1 || ' WHERE '
                         || $2 || '=' || rec.nm
                         || ';';
             totviews := totviews + 1;
@@ -29,7 +26,14 @@ CREATE OR REPLACE FUNCTION gs_redlist_createviews(name, name)
     $$
     LANGUAGE plpgsql;
 
--- SELECT gs_redlist_createviews('pruebas.metro', 'vegdom_cod');
--- SELECT gs_redlist_createviews('pruebas.mo_reg03_flt', 'values');
--- SELECT gs_redlist_createviews('pruebas.mo_reg06_flt', 'values');
--- SELECT gs_redlist_createviews('pruebas.mo_reg15_flt', 'values');
+-- SELECT gs_redlist_createviews('layers.emberger', 'vegdom_cod');
+-- SELECT gs_redlist_createviews('layers.metro', 'vegdom_cod');
+-- SELECT gs_redlist_createviews('layers.mo_reg03_flt', 'values');
+-- SELECT gs_redlist_createviews('layers.mo_reg06_flt', 'values');
+-- SELECT gs_redlist_createviews('layers.mo_reg15_flt', 'values');
+-- SELECT gs_redlist_createviews('layers."mo_monitoring9808-250_flt"', 'values');
+-- SELECT gs_redlist_createviews('layers."mo_assessment9808-250_flt"', 'values');
+-- SELECT gs_redlist_createviews('layers."cipreses-msk"', 'values');
+-- SELECT gs_redlist_createviews('layers.IFN_rev_final', 'values');
+-- SELECT gs_redlist_createviews('layers.WDPA_June2015_MAR-shapefile-polygons', 'values');
+-- SELECT gs_redlist_createviews('layers.WDPA_June2015_MAR-shapefile-points', 'values');
