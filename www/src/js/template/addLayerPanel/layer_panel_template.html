@@ -1,0 +1,24 @@
+<div id="addlayer-panel">
+    <div class="panel-header">
+        <h5><lang>Añadir capa</lang></h5>
+        <div class="btn-ok"><lang>Hecho</lang></div>
+    </div><!-- panel-header -->
+
+    <div class="panel-content">
+        <div class="tab-container">
+            <ul class="tabs-nav">
+                {{#categories}}
+                <li data-tab="tab-{{icon}}">
+                    <span class="counter"></span>
+                    <span class="map-icon {{icon}}" title="{{title}}"></span>
+                </li>
+                {{/categories}}
+            </ul>
+            <div class="tabs-content">
+                {{#categories}}
+                <div id="tab-{{icon}}"></div>
+                {{/categories}}
+            </div><!-- tabs-content -->
+        </div><!-- tab-container -->
+    </div><!-- panel-content -->
+</div><!-- addlayer-panel -->
