@@ -6,7 +6,8 @@ App.View.AddLayerGroup = Backbone.View.extend({
 	className: 'layerItemGroup',
 
 	events: {
-		'click .toggle_btn': 'toggle'
+		'click .toggle_btn': 'toggle',
+		'change input[type=checkbox]': 'toggle'
 	},
 
 	initialize: function(options) {
@@ -44,14 +45,20 @@ App.View.AddLayerGroup = Backbone.View.extend({
 	},
 
 	toggle: function(e) {
-		e.preventDefault();
-		var $target = $(e.currentTarget);
-		if($target.hasClass('contracted')){
-			$target.removeClass('contracted');
-			this.$content.slideDown();
+		//e.stopPropagation();
+		var $target = $(e.target);
+		var layers = this.$el.find('li input');
+		if ($target.is(':checked')) {
+			layers.each(function(index){
+				var layer = App.catalog.getLayerById($(this).data('layerid'));
+				App.currentLayers.add(layer);
+			});
+			$target.prop('checked', true);
 		}else{
-			$target.addClass('contracted');
-			this.$content.slideUp();
+			layers.each(function(index){
+				var layer = App.catalog.getLayerById($(this).data('layerid'));
+				App.currentLayers.remove(layer);
+			});
 		}
 	}
 });
