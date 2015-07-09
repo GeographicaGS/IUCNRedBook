@@ -19,11 +19,12 @@
 #  MA 02110-1301, USA.
 #
 
- CRS_EPSG=32629
- GEODATAFOLDER=/tmp/shp
- SQLFILE=/tmp/redlist_shp2postgis.sql
- DATABASE=mydatabase
- HOST=myhost
- USER=myuser
- PORT=5432
- DBSCHEMA=mydbschema
+CRS_EPSG=32629
+GEODATAFOLDER=/tmp/shp_orig
+SQLFILE=/tmp/redlist_shp2postgis.sql
+DATABASE=mydatabase
+HOST=myhost
+USER=myuser
+PORT=5432
+DBSCHEMA=mydbschema
+EXPORTFOLDER=/tmp/shp_exp
