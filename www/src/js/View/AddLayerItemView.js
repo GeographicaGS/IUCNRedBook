@@ -6,7 +6,7 @@ App.View.AddLayerItem = Backbone.View.extend({
 	className: 'layerItem',
 
 	events: {
-		'click .groupCheck': 'toggle'
+		'click input[type=checkbox]': 'toggle'
 	},
 
 	initialize: function() {
