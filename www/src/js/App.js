@@ -44,6 +44,8 @@ $(function() {
 
     App.lang = App.detectCurrentLanguage();
 
+    console.log(App.lang);
+
     if (App.lang){
         // get locales
         $.getJSON('/locales/'+App.lang+'.json',function(locales){
