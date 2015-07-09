@@ -110,7 +110,7 @@ App.View.Main = Backbone.View.extend({
         $("#help").addClass('hide');
         $legalEl.removeClass('hide');
         $legalEl.animate({
-           scrollTop: $legalEl.scrollTop() + $section.position().top
+           scrollTop: $legalEl.scrollTop() + $section.position().top - 20
         }, 500);
     },
 });
