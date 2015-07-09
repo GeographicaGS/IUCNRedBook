@@ -19,6 +19,10 @@
 #  MA 02110-1301, USA.
 #
 
+######################################################################
+# Before execute this script you need a CONFIGFILE properly          #
+# formed (See CONFIGFILE_example) in your current/working directory. #
+######################################################################
 
 
 import os
@@ -134,23 +138,44 @@ def removeFolder(shpfolder):
     shutil.rmtree(shpfolder)
 
 
+def readConfigFile(pathtoconfig):
+    """
+    Reading config file and storing it in a dictionary
+    """
+    with open(pathtoconfig) as f:
+        lns = f.read().splitlines()
+
+    confg_lst = [l.strip().split('=') for l in lns if '=' in l]
+
+    return {k: val for (k, val) in confg_lst}
+
+
 def main():
-    my_database = "my_postgis_db"
-    my_user = "postgres"
-    my_host = "localhost"
-    my_port = 5432
+
+    pathtoconfig = "CONFIGFILE"
+    cfg_dict = readConfigFile(os.path.join(os.getcwd(), pathtoconfig))
+
+    my_database = cfg_dict["DATABASE"]
+    my_user = cfg_dict["USER"]
+    my_host = cfg_dict["HOST"]
+    my_port = cfg_dict["PORT"]
+    folder = cfg_dict["EXPORTFOLDER"]
+    dbschema = cfg_dict["DBSCHEMA"]
     my_password = getpass.getpass("Enter password for user {}: ".format(my_user))
     my_query = '''
                  SELECT schemaname, viewname
                     FROM pg_views
-                    WHERE schemaname='pruebas';
-                '''
-    folder = '/tmp/shp'
+                    WHERE schemaname='{}';
+                '''.format(dbschema)
 
     tb = getLayerList(my_database, my_password, my_user, my_host, my_port, my_query)
 
-    # exportShp01(tb, folder, my_password, my_database, my_user, my_host, my_port)
-    exportShp02(tb, folder, my_password, my_database, my_user, my_host, my_port)
+    if tb:
+        # exportShp01(tb, folder, my_password, my_database, my_user, my_host, my_port)
+        exportShp02(tb, folder, my_password, my_database, my_user, my_host, my_port)
+
+    else:
+        print "No layers to export. Check DB schema..."
 
 if __name__ == "__main__":
     main()
