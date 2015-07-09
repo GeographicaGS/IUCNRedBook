@@ -31,6 +31,9 @@ App.View.Main = Backbone.View.extend({
         this.$('#layerPanel').html(this._layerPanel.el);
         $('nav .to-about').on('click', {context: this}, this.showAbout);
         $('nav .to-help').on('click', {context: this}, this.showHelp);
+        $('#to-legal').on('click', {context: this, section: 'legal-sec'}, this.showLegal);
+        $('#to-privacy').on('click', {context: this, section: 'privacy-sec'}, this.showLegal);
+        $('#to-contact').on('click', {context: this, section: 'contact-sec'}, this.showLegal);
 		return this;
     },
 
@@ -80,6 +83,7 @@ App.View.Main = Backbone.View.extend({
         e.data.context.toggleOpenContent(e, true);
         e.data.context.toggleShrinkMap(e, true);
         $("#help").addClass('hide');
+        $("#legal").addClass('hide');
         $("#about").removeClass('hide');
     },
 
@@ -90,6 +94,23 @@ App.View.Main = Backbone.View.extend({
         e.data.context.toggleOpenContent(e, true);
         e.data.context.toggleShrinkMap(e, true);
         $("#about").addClass('hide');
+        $("#legal").addClass('hide');
         $("#help").removeClass('hide');
+    },
+
+    showLegal: function(e){
+        e.preventDefault();
+        var $legalEl = $('#legal');
+        var $section = $('#' + e.data.section);
+        $('.main-nav .active').removeClass('active');
+        $(e.target).addClass('active');
+        e.data.context.toggleOpenContent(e, true);
+        e.data.context.toggleShrinkMap(e, true);
+        $("#about").addClass('hide');
+        $("#help").addClass('hide');
+        $legalEl.removeClass('hide');
+        $legalEl.animate({
+           scrollTop: $legalEl.scrollTop() + $section.position().top
+        }, 500);
     },
 });

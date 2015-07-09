@@ -62,13 +62,14 @@ main {
         position: absolute;
         padding: 76px 10.953058321%; /* 77 (originally 77) / 703 */
         height: calc(~"100% - 35px");
+        width: calc(~'100% - 10px');
         overflow: auto;
 
         clear:both;
     	padding-bottom: 77px;
     	color:@dark-grey;
     	background: @light-grey;
-        
+
     	h2{
     		.font-size(4.8);
     		line-height: 1;
@@ -89,6 +90,10 @@ main {
     		font-weight: 500;
     		letter-spacing: 0.025em;
     	}
+
+        &#legal > div{
+            margin-bottom: 50px;
+        }
     }
     &.open  {
     	width: 50%;

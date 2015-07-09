@@ -8,6 +8,7 @@ App.View.ContentPanel = Backbone.View.extend({
         'click .resize-handle': 'toggleOpen',
         'click .skip-intro': 'toggleAbout',
         'click .close-help': 'toggleHelp',
+        'click .close-legal': 'toggleLegal',
     },
 
     initialize: function() {
@@ -15,6 +16,7 @@ App.View.ContentPanel = Backbone.View.extend({
         this.$contentEl = this.$el.find("#content");
         this.$aboutEl = this.$el.find("#about");
         this.$helpEl = this.$el.find("#help");
+        this.$legalEl = this.$el.find("#legal");
     },
 
     onClose: function(){
@@ -62,4 +64,16 @@ App.View.ContentPanel = Backbone.View.extend({
           this.$helpEl.toggleClass('hide', !force);
       }
     },
+
+    toggleLegal: function(ev, force) {
+        ev.preventDefault();
+        if(force === undefined){
+            $('.main-nac .to-legal').toggleClass('active');
+            this.$legalEl.toggleClass('hide');
+        }else{
+            $('.main-nav .active').toggleClass('active');
+            $('.main-nav .to-legal').toggleClass('active', force);
+            this.$legalEl.toggleClass('hide', !force);
+        }
+    }
 });

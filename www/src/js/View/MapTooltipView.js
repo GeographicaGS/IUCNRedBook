@@ -24,7 +24,12 @@ App.View.MapTooltip = Backbone.View.extend({
 
     openPdf: function(e) {
         e.preventDefault();
-        var $target = $(e.target);
+        var $target = null;
+        if (e.target.tagName.toLowerCase() === 'li'){
+            $target = $(e.target);
+        }else{
+            $target = $(e.target).parent();
+        }
         var docPath = App.config.static_path + 'pdf/' + $target.data('doc') + '#page=' + $target.data('page');
         $('#pdf-viewer object').attr('data', docPath);
         this.trigger('openPdf');
@@ -32,6 +37,7 @@ App.View.MapTooltip = Backbone.View.extend({
         $('.main-nav .active').removeClass('active');
         $('#about').addClass('hide');
         $('#help').addClass('hide');
+        $('#legal').addClass('hide');
         $('#content').addClass('open');
         $('#map').addClass('shrink');
     },
