@@ -7,7 +7,7 @@ App.View.AddLayerGroup = Backbone.View.extend({
 
 	events: {
 		'click .toggle_btn': 'toggle',
-		'change input[type=checkbox]': 'toggle'
+		'change .groupCheck': 'toggle'
 	},
 
 	initialize: function(options) {
