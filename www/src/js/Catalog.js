@@ -1440,6 +1440,198 @@ App.Catalog = {
                     ]
                 }
             ]
+        },
+        {
+            title_es: "Espacios protegidos (WDPA - World Database on Protected Areas)",
+            title_fr: "Espacios protegidos (WDPA - World Database on Protected Areas)",
+            icon: "protegidos",
+            topics: [
+                        {
+                            title_es: "",
+                            title_fr: "",
+                            layers: [
+                                {
+                                    id: 84,
+                                    name_es: "Amodiation de Chasse de Gibier d’Eau",
+                                    name_fr: "Amodiation de Chasse de Gibier d’Eau",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_1_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_1_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 1
+                                },
+                                {
+                                    id: 85,
+                                    name_es: "Parc National",
+                                    name_fr: "Parc National",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_2_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_2_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 2
+                                },
+                                {
+                                    id: 86,
+                                    name_es: "Parc Naturel",
+                                    name_fr: "Parc Naturel",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_3_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_3_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 3
+                                },
+                                {
+                                    id: 87,
+                                    name_es: "Ramsar Site, Wetland of International Importance (Poly)",
+                                    name_fr: "Ramsar Site, Wetland of International Importance (Poly)",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_4_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_4_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 4
+                                },
+                                {
+                                    id: 94,
+                                    name_es: "Ramsar Site, Wetland of International Importance (Point)",
+                                    name_fr: "Ramsar Site, Wetland of International Importance (Point)",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_points_4_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_points_4_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 5
+                                },
+                                {
+                                    id: 88,
+                                    name_es: "Réserve Biologique Permanente",
+                                    name_fr: "Réserve Biologique Permanente",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_5_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_5_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 6
+                                },
+                                {
+                                    id: 89,
+                                    name_es: "Réserve Naturelle",
+                                    name_fr: "Réserve Naturelle",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_6_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_6_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 7
+                                },
+                                {
+                                    id: 90,
+                                    name_es: "Réserve de Chasse Permanente",
+                                    name_fr: "Réserve de Chasse Permanente",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_7_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_7_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 8
+                                },
+                                {
+                                    id: 91,
+                                    name_es: "Site d'Intérêt Biologique et Ecologique (SIBE)",
+                                    name_fr: "Site d'Intérêt Biologique et Ecologique (SIBE)",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_8_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_8_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 9
+                                },
+                                {
+                                    id: 92,
+                                    name_es: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
+                                    name_fr: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_9_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_9_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 10
+                                },
+                                {
+                                    id: 93,
+                                    name_es: "UNESCO-MAB Biosphere Reserve",
+                                    name_fr: "UNESCO-MAB Biosphere Reserve",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_10_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_10_v.zip",
+                                    xls: "",
+                                    color: "",
+                                    order: 11
+                                }
+
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 };
