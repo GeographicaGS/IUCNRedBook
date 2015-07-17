@@ -930,8 +930,8 @@ App.Catalog = {
                         },
                         {
                             id: 54,
-                            name_es: "Ecoregión Sahariana	",
-                            name_fr: "Ecoregión Sahariana	",
+                            name_es: "Ecoregión Sahariana",
+                            name_fr: "Ecoregión Sahariana",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
                             wmsLayName: "mo_reg06_flt_6_v",
@@ -1435,7 +1435,7 @@ App.Catalog = {
                             xls: "",
                             color: "",
                             order: 4
-                        },
+                        }
 
                     ]
                 }
@@ -1631,7 +1631,5 @@ App.Catalog = {
                         }
                     ]
                 }
-            ]
-        }
-    ]
-};
+        ]
+    };
