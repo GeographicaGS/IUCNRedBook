@@ -259,7 +259,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fee597",
                             order: 1
                         },
                         {
@@ -275,7 +275,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#ffff86",
                             order: 2
                         },
                         {
@@ -291,7 +291,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#bb9a45",
                             order: 3
                         },
                         {
@@ -307,7 +307,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#cee2d5",
                             order: 4
                         },
                         {
@@ -323,7 +323,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_5_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#2aa3f3",
                             order: 5
                         },
                         {
@@ -339,7 +339,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_6_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#99b5a3",
                             order: 6
                         },
                         {
@@ -355,7 +355,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_7_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#33a02c",
                             order: 7
                         },
                         {
@@ -371,7 +371,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_8_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#235c3b",
                             order: 8
                         },
                         {
@@ -387,7 +387,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_9_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#235c3b",
                             order: 9
                         },
                         {
@@ -403,7 +403,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_10_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#1f78b4",
                             order: 10
                         },
                         {
@@ -419,7 +419,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_11_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#9d5dc2",
                             order: 11
                         },
                         {
@@ -435,7 +435,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_12_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#37baa0",
                             order: 12
                         },
                         {
@@ -451,7 +451,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_13_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#c097d7",
                             order: 13
                         },
                         {
@@ -467,11 +467,27 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_14_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#712f6f",
                             order: 14
                         },
                         {
                             id: 29,
+                            name_es: "ABIPIN",
+                            name_fr: "ABIPIN",
+                            scientificname: "",
+                            wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                            wmsLayName: "emberger_15_v",
+                            pdf_es: "lref_marruecos.pdf",
+                            pdf_fr: "lref_marruecos.pdf",
+                            page_es: 69,
+                            page_fr: 69,
+                            gis: "emberger_15_v.zip",
+                            xls: "",
+                            color: "#fb2a2a",
+                            order: 15
+                        },
+                        {
+                            id: 30,
                             name_es: "PINPIN",
                             name_fr: "PINPIN",
                             scientificname: "",
@@ -483,11 +499,11 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_16_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fb9a99",
                             order: 16
                         },
                         {
-                            id: 30,
+                            id: 31,
                             name_es: "JUNTHU",
                             name_fr: "JUNTHU",
                             scientificname: "",
@@ -499,11 +515,11 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_17_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#2a907c",
                             order: 17
                         },
                         {
-                            id: 31,
+                            id: 32,
                             name_es: "ALTMON",
                             name_fr: "ALTMON",
                             scientificname: "",
@@ -515,11 +531,11 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_18_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#0a2d26",
                             order: 18
                         },
                         {
-                            id: 32,
+                            id: 94,
                             name_es: "HALOFI",
                             name_fr: "HALOFI",
                             scientificname: "",
@@ -531,11 +547,11 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_19_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d76800",
                             order: 19
                         },
                         {
-                            id: 33,
+                            id: 95,
                             name_es: "PANTAN",
                             name_fr: "PANTAN",
                             scientificname: "",
@@ -547,7 +563,7 @@ App.Catalog = {
                             page_fr: 69,
                             gis: "emberger_20_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#ffbf00",
                             order: 20
                         }
                     ]
@@ -569,7 +585,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#910f13",
                             order: 1
                         },
                         {
@@ -585,7 +601,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#8e5eb0",
                             order: 2
                         },
                         {
@@ -601,7 +617,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#94df68",
                             order: 3
                         },
                         {
@@ -617,7 +633,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#8be8ff",
                             order: 4
                         },
                         {
@@ -633,7 +649,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_5_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#917017",
                             order: 5
                         },
                         {
@@ -649,7 +665,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_6_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#1d9bb4",
                             order: 6
                         },
                         {
@@ -665,7 +681,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_7_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#61149f",
                             order: 7
                         },
                         {
@@ -681,7 +697,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_8_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#78bb42",
                             order: 8
                         },
                         {
@@ -697,7 +713,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_9_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#0e4d5a",
                             order: 9
                         },
                         {
@@ -713,7 +729,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_10_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fb2a2a",
                             order: 10
                         },
                         {
@@ -729,13 +745,13 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_11_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#ff7f00",
                             order: 11
                         },
                         {
                             id: 43,
                             name_es: "Especies secundarias",
-                            name_fr: "AraEspecies secundariasares",
+                            name_fr: "Especies secundarias",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
                             wmsLayName: "metro_12_v",
@@ -745,7 +761,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_12_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#910f13",
                             order: 12
                         },
                         {
@@ -761,7 +777,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_13_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#1a5216",
                             order: 13
                         },
                         {
@@ -777,7 +793,7 @@ App.Catalog = {
                             page_fr: 70,
                             gis: "metro_14_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d5a4ff",
                             order: 14
                         }
                     ]
@@ -799,14 +815,14 @@ App.Catalog = {
                             name_fr: "Ecozona Mediterráneo-Oceánica",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_1_v",
+                            wmsLayName: "mo_reg06_flt_3_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 33,
                             page_fr: 33,
-                            gis: "mo_reg03_flt_1_v.zip",
+                            gis: "mo_reg03_flt_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#76468c",
                             order: 1
                         },
                         {
@@ -815,14 +831,14 @@ App.Catalog = {
                             name_fr: "Ecozona Mediterránea",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_2_v",
+                            wmsLayName: "mo_reg06_flt_1_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 43,
                             page_fr: 43,
-                            gis: "mo_reg03_flt_2_v.zip",
+                            gis: "mo_reg03_flt_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#8c8caf",
                             order: 2
                         },
                         {
@@ -831,14 +847,14 @@ App.Catalog = {
                             name_fr: "Ecozona Sahariana",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_3_v",
+                            wmsLayName: "mo_reg06_flt_2_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 59,
                             page_fr: 59,
-                            gis: "mo_reg03_flt_3_v.zip",
+                            gis: "mo_reg03_flt_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fec103",
                             order: 3
                         }
 
@@ -854,14 +870,14 @@ App.Catalog = {
                             name_fr: "Ecoregión Rifeña",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_1_v",
+                            wmsLayName: "mo_reg06_flt_5_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 33,
                             page_fr: 33,
-                            gis: "mo_reg06_flt_1_v.zip",
+                            gis: "mo_reg06_flt_5_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#8cc4a3",
                             order: 1
                         },
                         {
@@ -870,14 +886,14 @@ App.Catalog = {
                             name_fr: "Ecoregión Oceánica",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_2_v",
+                            wmsLayName: "mo_reg06_flt_6_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 37,
                             page_fr: 37,
-                            gis: "mo_reg06_flt_2_v.zip",
+                            gis: "mo_reg06_flt_6_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#b292cf",
                             order: 2
                         },
                         {
@@ -886,14 +902,14 @@ App.Catalog = {
                             name_fr: "Ecoregión Mediterránea",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_3_v",
+                            wmsLayName: "mo_reg06_flt_1_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 43,
                             page_fr: 43,
-                            gis: "mo_reg06_flt_3_v.zip",
+                            gis: "mo_reg06_flt_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#8c8caf",
                             order: 3
                         },
                         {
@@ -902,14 +918,14 @@ App.Catalog = {
                             name_fr: "Ecoregión Atlásica",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_4_v",
+                            wmsLayName: "mo_reg06_flt_3_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 49,
                             page_fr: 49,
-                            gis: "mo_reg06_flt_4_v.zip",
+                            gis: "mo_reg06_flt_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#b7c099",
                             order: 4
                         },
                         {
@@ -918,14 +934,14 @@ App.Catalog = {
                             name_fr: "Ecoregión de la Altas Mesetas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_5_v",
+                            wmsLayName: "mo_reg06_flt_2_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 56,
                             page_fr: 56,
-                            gis: "mo_reg06_flt_5_v.zip",
+                            gis: "mo_reg06_flt_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#c58f83",
                             order: 5
                         },
                         {
@@ -934,14 +950,14 @@ App.Catalog = {
                             name_fr: "Ecoregión Sahariana",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg06_flt_6_v",
+                            wmsLayName: "mo_reg06_flt_4_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 59,
                             page_fr: 59,
-                            gis: "mo_reg06_flt_6_v.zip",
+                            gis: "mo_reg06_flt_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fcc202",
                             order: 6
                         }
 
@@ -957,14 +973,14 @@ App.Catalog = {
                             name_fr: "Dominio húmedo del Rif",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_1_v",
+                            wmsLayName: "mo_reg15_flt_12_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 34,
                             page_fr: 34,
-                            gis: "mo_reg15_flt_1_v.zip",
+                            gis: "mo_reg15_flt_12_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#7db0e8",
                             order: 1
                         },
                         {
@@ -973,14 +989,14 @@ App.Catalog = {
                             name_fr: "Dominio subhúmedo del pedimento del Rif occidental",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_2_v",
+                            wmsLayName: "mo_reg15_flt_11_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 35,
                             page_fr: 35,
-                            gis: "mo_reg15_flt_2_v.zip",
+                            gis: "mo_reg15_flt_11_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#438edb",
                             order: 2
                         },
                         {
@@ -989,14 +1005,14 @@ App.Catalog = {
                             name_fr: "Dominio semiárido de la costa Atlántica",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_3_v",
+                            wmsLayName: "mo_reg15_flt_13_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 38,
                             page_fr: 38,
-                            gis: "mo_reg15_flt_3_v.zip",
+                            gis: "mo_reg15_flt_13_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#2168b8",
                             order: 3
                         },
                         {
@@ -1005,14 +1021,14 @@ App.Catalog = {
                             name_fr: "Dominio árido de la costa Atlántica",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_4_v",
+                            wmsLayName: "mo_reg15_flt_14_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 40,
                             page_fr: 40,
-                            gis: "mo_reg15_flt_4_v.zip",
+                            gis: "mo_reg15_flt_14_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#c48b7b",
                             order: 4
                         },
                         {
@@ -1021,14 +1037,14 @@ App.Catalog = {
                             name_fr: "Zona transicional Atlántico-Sahariana",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_5_v",
+                            wmsLayName: "mo_reg15_flt_15_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 42,
                             page_fr: 42,
-                            gis: "mo_reg15_flt_5_v.zip",
+                            gis: "mo_reg15_flt_15_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#9b5946",
                             order: 5
                         },
                         {
@@ -1037,14 +1053,14 @@ App.Catalog = {
                             name_fr: "Dominio semiárido de llanuras y mesetas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_6_v",
+                            wmsLayName: "mo_reg15_flt_1_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 43,
                             page_fr: 43,
-                            gis: "mo_reg15_flt_6_v.zip",
+                            gis: "mo_reg15_flt_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#aaa546",
                             order: 6
                         },
                         {
@@ -1053,14 +1069,14 @@ App.Catalog = {
                             name_fr: "Dominio semiárido de zonas medias",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_7_v",
+                            wmsLayName: "mo_reg15_flt_2_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 46,
                             page_fr: 46,
-                            gis: "mo_reg15_flt_7_v.zip",
+                            gis: "mo_reg15_flt_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#74702d",
                             order: 7
                         },
                         {
@@ -1069,14 +1085,14 @@ App.Catalog = {
                             name_fr: "Dominio semiárido o subhúmedo-seco de zonas altas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_8_v",
+                            wmsLayName: "mo_reg15_flt_3_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 48,
                             page_fr: 48,
-                            gis: "mo_reg15_flt_8_v.zip",
+                            gis: "mo_reg15_flt_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#ccc984",
                             order: 8
                         },
                         {
@@ -1085,14 +1101,14 @@ App.Catalog = {
                             name_fr: "Dominio subhúmedo del Atlas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_9_v",
+                            wmsLayName: "mo_reg15_flt_6_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 50,
                             page_fr: 50,
-                            gis: "mo_reg15_flt_9_v.zip",
+                            gis: "mo_reg15_flt_6_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d6a603",
                             order: 9
                         },
                         {
@@ -1101,14 +1117,14 @@ App.Catalog = {
                             name_fr: "Dominio de Alta Montaña del Atlas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_10_v",
+                            wmsLayName: "mo_reg15_flt_7_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 52,
                             page_fr: 52,
-                            gis: "mo_reg15_flt_10_v.zip",
+                            gis: "mo_reg15_flt_7_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#fdd64d",
                             order: 10
                         },
                         {
@@ -1117,14 +1133,14 @@ App.Catalog = {
                             name_fr: "Dominio semiárido del Atlas",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_11_v",
+                            wmsLayName: "mo_reg15_flt_8_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 54,
                             page_fr: 54,
-                            gis: "mo_reg15_flt_11_v.zip",
+                            gis: "mo_reg15_flt_8_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#66ae83",
                             order: 11
                         },
                         {
@@ -1133,14 +1149,14 @@ App.Catalog = {
                             name_fr: "Zona transicional semiárida del Atlas y de las Altas Mesetas orientales",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_12_v",
+                            wmsLayName: "mo_reg15_flt_4_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 56,
                             page_fr: 56,
-                            gis: "mo_reg15_flt_12_v.zip",
+                            gis: "mo_reg15_flt_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#478761",
                             order: 12
                         },
                         {
@@ -1149,14 +1165,14 @@ App.Catalog = {
                             name_fr: "Dominio pre-Sahariano de las Altas Mesetas orientales",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_13_v",
+                            wmsLayName: "mo_reg15_flt_5_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 57,
                             page_fr: 57,
-                            gis: "mo_reg15_flt_13_v.zip",
+                            gis: "mo_reg15_flt_5_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d5c2e4",
                             order: 13
                         },
                         {
@@ -1165,14 +1181,14 @@ App.Catalog = {
                             name_fr: "Zona transicional Mediterráneo-Sahariana",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_14_v",
+                            wmsLayName: "mo_reg15_flt_9_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 60,
                             page_fr: 60,
-                            gis: "mo_reg15_flt_14_v.zip",
+                            gis: "mo_reg15_flt_9_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#9264bb",
                             order: 14
                         },
                         {
@@ -1181,14 +1197,14 @@ App.Catalog = {
                             name_fr: "Dominio Sahariano",
                             scientificname: "",
                             wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                            wmsLayName: "mo_reg15_flt_15_v",
+                            wmsLayName: "mo_reg15_flt_10_v",
                             pdf_es: "lref_marruecos.pdf",
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 62,
                             page_fr: 62,
-                            gis: "mo_reg15_flt_15_v.zip",
+                            gis: "mo_reg15_flt_10_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#683f8d",
                             order: 15
                         }
 
@@ -1218,7 +1234,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#99649e",
                             order: 1
                         },
                         {
@@ -1234,7 +1250,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d20000",
                             order: 2
                         },
                         {
@@ -1250,7 +1266,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#835b52",
                             order: 3
                         },
                         {
@@ -1266,7 +1282,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#be8265",
                             order: 4
                         },
                         {
@@ -1282,7 +1298,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_5_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#a69d68",
                             order: 5
                         },
                         {
@@ -1298,7 +1314,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_6_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#d3cea5",
                             order: 6
                         },
                         {
@@ -1314,7 +1330,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_7_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#aec6a8",
                             order: 7
                         },
                         {
@@ -1330,7 +1346,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_8_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#6aae76",
                             order: 8
                         },
                         {
@@ -1346,7 +1362,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_9_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#5f817e",
                             order: 9
                         },
                         {
@@ -1362,7 +1378,7 @@ App.Catalog = {
                             page_fr: 83,
                             gis: "mo_assessment_10_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#aeb0d3",
                             order: 10
                         }
 
@@ -1385,7 +1401,7 @@ App.Catalog = {
                             page_fr: 87,
                             gis: "mo_monitoring_1_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#ca0003",
                             order: 1
                         },
                         {
@@ -1401,7 +1417,7 @@ App.Catalog = {
                             page_fr: 87,
                             gis: "mo_monitoring_2_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#c5c767",
                             order: 2
                         },
                         {
@@ -1417,7 +1433,7 @@ App.Catalog = {
                             page_fr: 87,
                             gis: "mo_monitoring_3_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#658ba0",
                             order: 3
                         },
                         {
@@ -1433,7 +1449,7 @@ App.Catalog = {
                             page_fr: 87,
                             gis: "mo_monitoring_4_v.zip",
                             xls: "",
-                            color: "",
+                            color: "#dcd6d4",
                             order: 4
                         }
 
@@ -1463,7 +1479,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_1_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#465f5c",
                                     order: 1
                                 },
                                 {
@@ -1479,7 +1495,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_2_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#6aae76",
                                     order: 2
                                 },
                                 {
@@ -1495,7 +1511,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_3_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#2d8d26",
                                     order: 3
                                 },
                                 {
@@ -1511,7 +1527,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_4_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#ff7f00",
                                     order: 4
                                 },
                                 {
@@ -1527,7 +1543,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_points_4_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#ff7f00",
                                     order: 5
                                 },
                                 {
@@ -1543,7 +1559,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_5_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#fdda88",
                                     order: 6
                                 },
                                 {
@@ -1559,7 +1575,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_6_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#ca0003",
                                     order: 7
                                 },
                                 {
@@ -1575,7 +1591,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_7_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#d3cea5",
                                     order: 8
                                 },
                                 {
@@ -1591,7 +1607,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_8_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#9e6091",
                                     order: 9
                                 },
                                 {
@@ -1607,7 +1623,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_9_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#6f4365",
                                     order: 10
                                 },
                                 {
@@ -1623,7 +1639,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_10_v.zip",
                                     xls: "",
-                                    color: "",
+                                    color: "#aec6a8",
                                     order: 11
                                 }
 
