@@ -1478,7 +1478,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_1_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#465f5c",
                                     order: 1
                                 },
@@ -1494,7 +1494,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_2_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#6aae76",
                                     order: 2
                                 },
@@ -1510,7 +1510,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_3_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#2d8d26",
                                     order: 3
                                 },
@@ -1526,7 +1526,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_4_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#ff7f00",
                                     order: 4
                                 },
@@ -1542,7 +1542,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_points_4_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#ff7f00",
                                     order: 5
                                 },
@@ -1558,7 +1558,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_5_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#fdda88",
                                     order: 6
                                 },
@@ -1574,7 +1574,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_6_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#ca0003",
                                     order: 7
                                 },
@@ -1590,7 +1590,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_7_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#d3cea5",
                                     order: 8
                                 },
@@ -1606,7 +1606,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_8_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#9e6091",
                                     order: 9
                                 },
@@ -1622,7 +1622,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_9_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#6f4365",
                                     order: 10
                                 },
@@ -1638,7 +1638,7 @@ App.Catalog = {
                                     page_es: 1,
                                     page_fr: 1,
                                     gis: "wdpa_june2015_poly_10_v.zip",
-                                    xls: "",
+                                    xls: "WDPA_June2015_MAR.xls",
                                     color: "#aec6a8",
                                     order: 11
                                 }
