@@ -12,8 +12,8 @@ App.View.Map = Backbone.View.extend({
         //create the left map's leaflet instance
         this._map = new L.Map('map', {'zoomControl': false}).setView([App.Cons.iniLat, App.Cons.iniLng], App.Cons.iniZoom);
 
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}
+        L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+            {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
         ).addTo(this._map);
 
         // add zoom control to map left
@@ -173,8 +173,8 @@ App.View.Map = Backbone.View.extend({
 		        		obj.getFeatureInfo(e,requestIdx+1);
 		        	}
 		        	else{
-                        currentLayers[requestIdx].gis = App.config.static_path + currentLayers[requestIdx].gis;
-                        currentLayers[requestIdx].xls = App.config.static_path + currentLayers[requestIdx].xls;
+                        currentLayers[requestIdx].gis = App.config.static_path + 'gis/' + currentLayers[requestIdx].gis;
+                        currentLayers[requestIdx].xls = App.config.static_path + 'xls/' + currentLayers[requestIdx].xls;
                         var content = new App.View.MapTooltip({model: currentLayers[requestIdx]});
                         obj.listenTo(content, 'openPdf', this.openPdf);
                         var popup = L.popup()
