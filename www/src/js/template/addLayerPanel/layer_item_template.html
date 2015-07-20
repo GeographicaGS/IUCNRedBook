@@ -2,6 +2,6 @@
     <input id="layer{{id}}" data-layerid="{{id}}" type="checkbox">
     <label for="layer{{id}}">
         <span class="check" {{#color}}style="background-color: {{color}}; border-color: {{color}}"{{/color}}></span>
-        <span class="name">{{name}} {{#scientificname}}<em>({{scientificname}})</em>{{/scientificname}}</span>
+        <span class="name" title="{{name}} {{#scientificname}}({{scientificname}}){{/scientificname}}">{{name}} {{#scientificname}}<em>({{scientificname}})</em>{{/scientificname}}</span>
     </label>
 </li>

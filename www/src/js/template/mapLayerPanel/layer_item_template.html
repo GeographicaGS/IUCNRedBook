@@ -1,7 +1,7 @@
 <li class="layerItem {{#visible}}on{{/visible}}" data-layerid='{{id}}'>
     <!-- <input id="layer{{id}}" data-layerid="{{id}}" type="checkbox"> -->
     <span class="marker" {{#color}}style="background-color: {{color}}; border-color: {{color}}"{{/color}}></span>
-    <label id="maplayer{{id}}">
+    <label id="maplayer{{id}}" title="{{name}} {{#scientificname}}({{scientificname}}){{/scientificname}}">
         {{name}}
         {{#scientificname}}<em>({{scientificname}})</em>{{/scientificname}}
     </label>
