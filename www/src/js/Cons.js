@@ -1,8 +1,8 @@
 App.Cons = {
     TYPE_DASHBOARD : 'dashboard',
-    iniLat: 33.39017,
-	iniLng: -6.82250,
-	iniZoom: 8,
+    iniLat: 32.500,
+	iniLng: -1.285,
+	iniZoom: 7,
 };
 
 App.Cons.TYPES = [App.Cons.TYPE_DASHBOARD];
