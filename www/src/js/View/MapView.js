@@ -173,8 +173,10 @@ App.View.Map = Backbone.View.extend({
 		        		obj.getFeatureInfo(e,requestIdx+1);
 		        	}
 		        	else{
+                        if(currentLayers[requestIdx].gis)
                         currentLayers[requestIdx].gis = App.config.static_path + 'gis/' + currentLayers[requestIdx].gis;
-                        currentLayers[requestIdx].xls = App.config.static_path + 'xls/' + currentLayers[requestIdx].xls;
+                        if(currentLayers[requestIdx].xls)
+                            currentLayers[requestIdx].xls = App.config.static_path + 'xls/' + currentLayers[requestIdx].xls;
                         var content = new App.View.MapTooltip({model: currentLayers[requestIdx]});
                         obj.listenTo(content, 'openPdf', this.openPdf);
                         var popup = L.popup()
