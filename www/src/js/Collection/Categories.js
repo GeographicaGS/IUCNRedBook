@@ -28,7 +28,7 @@ App.Collection.Categories = Backbone.Collection.extend({
 
 		var currentCatIndex = 0;
 		var currentSubcatIndex = 0;
-		foundLayer = null;
+		var foundLayer = null;
 		this.each(function(category){
 			_.each(category.get("topics"), function(topic){
 				_.each(topic.layers, function(layer){

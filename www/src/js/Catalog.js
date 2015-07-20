@@ -749,7 +749,7 @@ App.Catalog = {
                             order: 11
                         },
                         {
-                            id: 43,
+                            id: 433,
                             name_es: "Especies secundarias",
                             name_fr: "Especies secundarias",
                             scientificname: "",
@@ -1531,7 +1531,7 @@ App.Catalog = {
                                     order: 4
                                 },
                                 {
-                                    id: 94,
+                                    id: 96,
                                     name_es: "Ramsar Site, Wetland of International Importance (Point)",
                                     name_fr: "Ramsar Site, Wetland of International Importance (Point)",
                                     scientificname: "",
