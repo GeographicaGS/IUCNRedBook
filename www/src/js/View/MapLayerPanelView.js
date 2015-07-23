@@ -35,6 +35,8 @@ App.View.MapLayerPanel = Backbone.View.extend({
 
     renderAll: function() {
         this.$groupsContainer.empty();
+        this.$panelEl.addClass('open');
+        this.$categoriesContainer.children('.layerItemGroup').addClass('disabled');
         App.currentLayers.each(this.renderLayer, this);
     },
 
@@ -50,7 +52,10 @@ App.View.MapLayerPanel = Backbone.View.extend({
 
     renderLayer: function(elem, index){
         var layer = new App.View.MapLayerItem({model:elem});
-        this.$groupsContainer.eq(elem.get('topic')).append(layer.render().$el);
+        var groupContainer = this.$groupsContainer.eq(elem.get('topic'));
+        groupContainer.append(layer.render().$el);
+        if(groupContainer.children().length)
+            groupContainer.parent().parent().removeClass('disabled');
     },
 
     toggleOpen: function(ev) {

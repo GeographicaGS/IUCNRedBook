@@ -48,8 +48,7 @@ App.View.MapLayerItem = Backbone.View.extend({
     },
 
     changeOpacity: function(e){
-        if(e)
-            e.stopPropagation();
+        e.stopPropagation();
         var opacity = e.target.value / 100;
         this.model.set({'opacity': opacity});
     },

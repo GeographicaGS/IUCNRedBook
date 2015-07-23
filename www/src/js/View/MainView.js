@@ -30,7 +30,7 @@ App.View.Main = Backbone.View.extend({
         this.$('#contentPanel').html(this._contentPanel.el);
         this.$('#layerPanel').html(this._layerPanel.el);
         $('nav .to-about').on('click', {context: this}, this.showAbout);
-        $('nav .to-help').on('click', {context: this}, this.showHelp);
+        $('.to-help').on('click', {context: this}, this.showHelp);
         $('#to-legal').on('click', {context: this, section: 'legal-sec'}, this.showLegal);
         $('#to-privacy').on('click', {context: this, section: 'privacy-sec'}, this.showLegal);
         $('#to-contact').on('click', {context: this, section: 'contact-sec'}, this.showLegal);

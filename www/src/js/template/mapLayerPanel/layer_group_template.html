@@ -10,6 +10,14 @@
         <span class="map-icon {{icon}}"></span>
         <span class="layer-toggle"></span>
         <h5 title="{{category}} {{#title}}({{title}}){{/title}}">{{category}} {{#title}}<span class="subtitle">({{title}})</span>{{/title}}</h5>
+        <span class='layer-opacity'>
+            <span class='ico-opacity'></span>
+            <div class='o-make-visible'>
+                <div class='o-slider-wrapper'>
+                    <input class="layer-opacity-range" type="range" min="0" max="100" value="100">
+                </div>
+            </div>
+        </span>
     </div>
     <ul></ul>
 </div>
