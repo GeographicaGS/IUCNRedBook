@@ -6,7 +6,8 @@ App.View.MapLayerGroup = Backbone.View.extend({
 	className: 'layerItemGroup',
 
 	events: {
-		'click .layer-toggle': 'toggleChildren'
+		'click .layer-toggle': 'toggleChildren',
+		'change .layer-opacity-range': 'opacityChildren'
 	},
 
 	initialize: function() {
@@ -34,9 +35,14 @@ App.View.MapLayerGroup = Backbone.View.extend({
 	},
 
 	renderGroup: function(){
-		for (var i = 0; i < this.model.layers.length; i++ ){
-			var layer = new App.View.MapLayerItem({model: this.model.layers[i]});
-			this.$content.append(layer.render().$el);
+		if(this.model.layers.length > 0){
+			this.$el.removeClass('disabled');
+			for (var i = 0; i < this.model.layers.length; i++ ){
+				var layer = new App.View.MapLayerItem({model: this.model.layers[i]});
+				this.$content.append(layer.render().$el);
+			}
+		}else{
+			this.$el.addClass('disabled');
 		}
 	},
 
@@ -47,6 +53,16 @@ App.View.MapLayerGroup = Backbone.View.extend({
 		layers.each(function(index){
 			$(this).toggleClass('on', allHidden);
 			App.currentLayers.get($(this).data('layerid')).set({'visible': allHidden});
+		});
+	},
+
+	opacityChildren: function(e) {
+		e.preventDefault();
+        e.stopPropagation();
+        var opacity = e.target.value / 100;
+		var layers = this.$el.find('li');
+		layers.each(function(index){
+			App.currentLayers.get($(this).data('layerid')).set({'opacity': opacity});
 		});
 	}
 });

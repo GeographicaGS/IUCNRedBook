@@ -81,6 +81,11 @@ main {
     		line-height: 24/18;
     		font-weight: 300;
     		margin-bottom: 20px;
+
+            a {
+                border-bottom: 1px solid @dark-grey;
+                cursor: pointer;
+            }
     	}
     	h3 {
     		margin:26px 0 10px ;
@@ -89,6 +94,10 @@ main {
     		text-transform: uppercase;
     		font-weight: 500;
     		letter-spacing: 0.025em;
+
+            &.lowercase {
+                text-transform: none;
+            }
     	}
 
         &#legal > div{
