@@ -90,7 +90,7 @@ App.View.Main = Backbone.View.extend({
     showHelp: function(e){
         e.preventDefault();
         $('.main-nav .active').removeClass('active');
-        $(e.target).addClass('active');
+        $('.main-nav .to-help').addClass('active');
         e.data.context.toggleOpenContent(e, true);
         e.data.context.toggleShrinkMap(e, true);
         $("#about").addClass('hide');
