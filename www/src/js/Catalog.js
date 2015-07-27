@@ -1232,7 +1232,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_1_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#99649e",
                             order: 1
@@ -1248,7 +1248,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_2_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#d20000",
                             order: 2
@@ -1264,7 +1264,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_3_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#835b52",
                             order: 3
@@ -1280,7 +1280,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_4_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#be8265",
                             order: 4
@@ -1296,7 +1296,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_5_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#a69d68",
                             order: 5
@@ -1312,7 +1312,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_6_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#d3cea5",
                             order: 6
@@ -1328,7 +1328,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_7_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#aec6a8",
                             order: 7
@@ -1344,7 +1344,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_8_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#6aae76",
                             order: 8
@@ -1360,7 +1360,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_9_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#5f817e",
                             order: 9
@@ -1376,7 +1376,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 83,
                             page_fr: 83,
-                            gis: "mo_assessment_10_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#aeb0d3",
                             order: 10
@@ -1399,7 +1399,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 87,
                             page_fr: 87,
-                            gis: "mo_monitoring_1_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#ca0003",
                             order: 1
@@ -1415,7 +1415,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 87,
                             page_fr: 87,
-                            gis: "mo_monitoring_2_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#c5c767",
                             order: 2
@@ -1431,7 +1431,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 87,
                             page_fr: 87,
-                            gis: "mo_monitoring_3_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#658ba0",
                             order: 3
@@ -1447,7 +1447,7 @@ App.Catalog = {
                             pdf_fr: "lref_marruecos.pdf",
                             page_es: 87,
                             page_fr: 87,
-                            gis: "mo_monitoring_4_v.zip",
+                            gis: "",
                             xls: "",
                             color: "#dcd6d4",
                             order: 4
