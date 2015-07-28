@@ -1458,13 +1458,13 @@ App.Catalog = {
             ]
         },
         {
-            title_es: "Espacios protegidos (WDPA - World Database on Protected Areas)",
-            title_fr: "Espacios protegidos (WDPA - World Database on Protected Areas)",
+            title_es: "Espacios protegidos",
+            title_fr: "Espacios protegidos",
             icon: "protegidos",
             topics: [
                         {
-                            title_es: "",
-                            title_fr: "",
+                            title_es: "WDPA (World Database on Protected Areas)",
+                            title_fr: "WDPA (World Database on Protected Areas)",
                             layers: [
                                 {
                                     id: 84,
@@ -1594,38 +1594,22 @@ App.Catalog = {
                                     color: "#d3cea5",
                                     order: 8
                                 },
-                                {
-                                    id: 91,
-                                    name_es: "Site d'Intérêt Biologique et Ecologique (SIBE)",
-                                    name_fr: "Site d'Intérêt Biologique et Ecologique (SIBE)",
-                                    scientificname: "",
-                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                                    wmsLayName: "wdpa_june2015_poly_8_v",
-                                    pdf_es: "lref_marruecos.pdf",
-                                    pdf_fr: "lref_marruecos.pdf",
-                                    page_es: 1,
-                                    page_fr: 1,
-                                    gis: "wdpa_june2015_poly_8_v.zip",
-                                    xls: "WDPA_June2015_MAR.xls",
-                                    color: "#9e6091",
-                                    order: 9
-                                },
-                                {
-                                    id: 92,
-                                    name_es: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
-                                    name_fr: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
-                                    scientificname: "",
-                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
-                                    wmsLayName: "wdpa_june2015_poly_9_v",
-                                    pdf_es: "lref_marruecos.pdf",
-                                    pdf_fr: "lref_marruecos.pdf",
-                                    page_es: 1,
-                                    page_fr: 1,
-                                    gis: "wdpa_june2015_poly_9_v.zip",
-                                    xls: "WDPA_June2015_MAR.xls",
-                                    color: "#6f4365",
-                                    order: 10
-                                },
+                                // {
+                                //     id: 92,
+                                //     name_es: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
+                                //     name_fr: "Specially Protected Areas of Mediterranean Importance (Barcelona Convention)",
+                                //     scientificname: "",
+                                //     wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                //     wmsLayName: "wdpa_june2015_poly_9_v",
+                                //     pdf_es: "lref_marruecos.pdf",
+                                //     pdf_fr: "lref_marruecos.pdf",
+                                //     page_es: 1,
+                                //     page_fr: 1,
+                                //     gis: "wdpa_june2015_poly_9_v.zip",
+                                //     xls: "WDPA_June2015_MAR.xls",
+                                //     color: "#6f4365",
+                                //     order: 9
+                                // },
                                 {
                                     id: 93,
                                     name_es: "UNESCO-MAB Biosphere Reserve",
@@ -1640,7 +1624,46 @@ App.Catalog = {
                                     gis: "wdpa_june2015_poly_10_v.zip",
                                     xls: "WDPA_June2015_MAR.xls",
                                     color: "#aec6a8",
-                                    order: 11
+                                    order: 10
+                                }
+
+                            ]
+                        },
+                        {
+                            title_es: "Zonas Importantes para la bidiversidad",
+                            title_fr: "Zonas Importantes para la bidiversidad",
+                            layers: [
+                                {
+                                    id: 91,
+                                    name_es: "Site d'Intérêt Biologique et Ecologique (SIBE)",
+                                    name_fr: "Site d'Intérêt Biologique et Ecologique (SIBE)",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "wdpa_june2015_poly_8_v",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "wdpa_june2015_poly_8_v.zip",
+                                    xls: "WDPA_June2015_MAR.xls",
+                                    color: "#9e6091",
+                                    order: 1
+                                },
+                                {
+                                    id: 94,
+                                    name_es: "Important Plant Areas (IUCN and Plantlife) ",
+                                    name_fr: "Important Plant Areas (IUCN and Plantlife) ",
+                                    scientificname: "",
+                                    wmsServer:"http://www.iucn-redlistecosystems-morocco.org/geoserver/redlist/wms?",
+                                    wmsLayName: "imp_plant_areas",
+                                    pdf_es: "lref_marruecos.pdf",
+                                    pdf_fr: "lref_marruecos.pdf",
+                                    page_es: 1,
+                                    page_fr: 1,
+                                    gis: "imp_plant_areas.zip",
+                                    xls: "",
+                                    color: "#6f4365",
+                                    order: 2
                                 }
 
                             ]
