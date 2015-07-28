@@ -37,7 +37,7 @@ def getLayerList(my_database, my_password, my_user, my_host, my_port, my_query):
 
     """
 
-    print "Getting data from PostGIS..."
+    print("Getting data from PostGIS...")
 
     try:
         conn = psycopg2.connect(database=my_database, user=my_user,
@@ -54,7 +54,7 @@ def getLayerList(my_database, my_password, my_user, my_host, my_port, my_query):
         return res
 
     except Exception as err:
-        print err
+        print(err)
 
 
 def exportShp01(tables, folder, my_password, my_database, my_user, my_host, my_port):
@@ -63,11 +63,12 @@ def exportShp01(tables, folder, my_password, my_database, my_user, my_host, my_p
 
     """
 
-    print "Exporting layers from PostGIS to shp..."
+    print("Exporting layers from PostGIS to shp...")
 
     try:
         fmt = '-f "ESRI Shapefile"'
-        connpar = 'PG:"host={0} user={1} dbname={2} password={3} port={4}"'.format(my_host, my_user, my_database, my_password, my_port)
+        connpar = 'PG:"host={0} user={1} dbname={2} password={3} port={4}"'.format(my_host,
+                                                my_user, my_database, my_password, my_port)
 
         for t in tables:
             shpfolder = os.path.join(folder, t[1])
@@ -83,7 +84,8 @@ def exportShp01(tables, folder, my_password, my_database, my_user, my_host, my_p
             removeFolder(shpfolder)
 
     except Exception as err:
-        print err
+        print(err)
+
 
 def exportShp02(tables, folder, my_password, my_database, my_user, my_host, my_port):
     """
@@ -91,7 +93,7 @@ def exportShp02(tables, folder, my_password, my_database, my_user, my_host, my_p
 
     """
 
-    print "Exporting layers from PostGIS to shp..."
+    print("Exporting layers from PostGIS to shp...")
 
     try:
 
@@ -102,14 +104,15 @@ def exportShp02(tables, folder, my_password, my_database, my_user, my_host, my_p
 
             shpname = os.path.join(shpfolder, t[1])
             tablename = '{0}.{1}'.format(t[0], t[1])
-            cmd = 'pgsql2shp -f "{0}" -h {1} -u {2} -p {3} -P {4} {5} {6}'.format(shpname, my_host, my_user,  my_port, my_password, my_database, tablename)
+            cmd = 'pgsql2shp -f "{0}" -h {1} -u {2} -p {3} -P {4} {5} {6}'.format(shpname,
+                        my_host, my_user,  my_port, my_password, my_database, tablename)
             os.system(cmd)
 
             zipShp(shpfolder)
             removeFolder(shpfolder)
 
     except Exception as err:
-        print err
+        print(err)
 
 
 def zipShp(folder):
@@ -117,8 +120,12 @@ def zipShp(folder):
     Zip shapefile folder
 
     """
-    print "Zipping shp layers: {}.zip".format(folder)
-    shutil.make_archive(folder, 'zip', folder)
+    try:
+        print("Zipping shp layers: {}.zip".format(folder))
+        shutil.make_archive(folder, 'zip', folder)
+
+    except Exception as err:
+        print(err)
 
 
 def createFolder(shpfolder):
@@ -142,12 +149,24 @@ def readConfigFile(pathtoconfig):
     """
     Reading config file and storing it in a dictionary
     """
-    with open(pathtoconfig) as f:
-        lns = f.read().splitlines()
+    try:
+        with open(pathtoconfig) as f:
+            lns = f.read().splitlines()
 
-    confg_lst = [l.strip().split('=') for l in lns if '=' in l]
+        confg_lst = [l.strip().split('=') for l in lns if '=' in l]
+
+    except Exception as err:
+        print(err)
 
     return {k: val for (k, val) in confg_lst}
+
+
+def getPsw(my_user):
+    """
+    Get password from shell
+    """
+    msg = "Enter password for user {}: ".format(my_user)
+    return getpass.getpass(msg)
 
 
 def main():
@@ -161,21 +180,29 @@ def main():
     my_port = cfg_dict["PORT"]
     folder = cfg_dict["EXPORTFOLDER"]
     dbschema = cfg_dict["DBSCHEMA"]
-    my_password = getpass.getpass("Enter password for user {}: ".format(my_user))
-    my_query = '''
+    engine = cfg_dict["ENGINE"]
+    my_password = getPsw(my_user)
+    my_query = """
                  SELECT schemaname, viewname
                     FROM pg_views
                     WHERE schemaname='{}';
-                '''.format(dbschema)
+                """.format(dbschema)
 
     tb = getLayerList(my_database, my_password, my_user, my_host, my_port, my_query)
 
     if tb:
-        # exportShp01(tb, folder, my_password, my_database, my_user, my_host, my_port)
-        exportShp02(tb, folder, my_password, my_database, my_user, my_host, my_port)
+        if engine == "ogr2ogr":
+            exportShp01(tb, folder, my_password, my_database, my_user, my_host, my_port)
+
+        elif engine == "pgsql2shp":
+            exportShp02(tb, folder, my_password, my_database, my_user, my_host, my_port)
+
+        else:
+            print("No engine to export layers... Define 'pgsql2shp' or 'ogr2ogr'.")
 
     else:
         print "No layers to export. Check DB schema..."
+
 
 if __name__ == "__main__":
     main()
