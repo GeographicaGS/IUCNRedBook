@@ -1650,7 +1650,7 @@ App.Catalog = {
                                     order: 1
                                 },
                                 {
-                                    id: 94,
+                                    id: 96,
                                     name_es: "Important Plant Areas (IUCN and Plantlife) ",
                                     name_fr: "Important Plant Areas (IUCN and Plantlife) ",
                                     scientificname: "",
@@ -1662,7 +1662,7 @@ App.Catalog = {
                                     page_fr: 1,
                                     gis: "imp_plant_areas.zip",
                                     xls: "",
-                                    color: "#6f4365",
+                                    color: "#436f51",
                                     order: 2
                                 }
 
