@@ -1650,7 +1650,7 @@ App.Catalog = {
                                     order: 1
                                 },
                                 {
-                                    id: 96,
+                                    id: 97,
                                     name_es: "Important Plant Areas (IUCN and Plantlife) ",
                                     name_fr: "Important Plant Areas (IUCN and Plantlife) ",
                                     scientificname: "",
