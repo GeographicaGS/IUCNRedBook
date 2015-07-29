@@ -14,10 +14,10 @@
           <Name>Single symbol</Name>
           <PolygonSymbolizer>
             <Fill>
-              <CssParameter name="fill">#6f4365</CssParameter>
+              <CssParameter name="fill">#436f51</CssParameter>
             </Fill>
             <Stroke>
-              <CssParameter name="stroke">#6f4365</CssParameter>
+              <CssParameter name="stroke">#436f51</CssParameter>
               <CssParameter name="stroke-width">0.26</CssParameter>
             </Stroke>
           </PolygonSymbolizer>
