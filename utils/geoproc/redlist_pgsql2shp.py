@@ -161,6 +161,21 @@ def readConfigFile(pathtoconfig):
     return {k: val for (k, val) in confg_lst}
 
 
+def getQuery(querytype, dbschema):
+    qry = """
+          SELECT table_schema, table_name
+             FROM information_schema.tables
+             WHERE table_schema='{}';""".format(dbschema)
+
+    if querytype == "views":
+        qry = "{} AND table_type='VIEW';".format(qry[:-1])
+
+    elif querytype == "tables":
+        qry = "{} AND table_type='BASE TABLE';".format(qry[:-1])
+
+    return qry
+
+
 def getPsw(my_user):
     """
     Get password from shell
@@ -180,13 +195,10 @@ def main():
     my_port = cfg_dict["PORT"]
     folder = cfg_dict["EXPORTFOLDER"]
     dbschema = cfg_dict["DBSCHEMA"]
+    querytype = cfg_dict["QUERYTYPE"]
     engine = cfg_dict["ENGINE"]
     my_password = getPsw(my_user)
-    my_query = """
-                 SELECT schemaname, viewname
-                    FROM pg_views
-                    WHERE schemaname='{}';
-                """.format(dbschema)
+    my_query = getQuery(querytype, dbschema)
 
     tb = getLayerList(my_database, my_password, my_user, my_host, my_port, my_query)
 

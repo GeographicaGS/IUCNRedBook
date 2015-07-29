@@ -29,3 +29,4 @@ PORT=5432
 DBSCHEMA=mydbschema
 EXPORTFOLDER=/tmp/shp_exp
 ENGINE=pgsql2shp
+QUERYTYPE=views
